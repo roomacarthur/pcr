@@ -2,7 +2,7 @@
 
 ## intro
 
-PCR is a social space for people to request code/project reviews and also review other peoples projects.
+PCR is a social space for users to request code/project reviews and review other peoples projects.
 
 # Table of Contents:
 
