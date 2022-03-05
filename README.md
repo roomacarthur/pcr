@@ -53,6 +53,8 @@ Below are a list of user stories that are very basic and cover a lot of the user
 
 #### As a Site User:
 
+Maybe just link to GitHub Project... 
+
 1. I want to be able to understand the functionality of the application so I can decide if what the application offers is something I want.
 2. I want to feel welcomed and find the site easy to navigate and view so that as a junior developer I don't feel out of depth.
 3. I want to be able to sign up so that I can have my own profile and submit work for review and review other site users work.
@@ -126,7 +128,7 @@ This project will be deployed to [Heroku](https://heroku.com) using the followin
 
 1. Navigate to [Heroku](https://heroku.com).
 2. Create an account or log in.
-   - If creating an account please select **Python** as the **_Primary development language_**
+   - If creating an account select **Python** as the **_Primary development language_**
 3. Click the **New** button found top right of page and select **Create New App** from the dropdown menu.
 4. Provide an app name **_this has to be unique_**
 5. Select your region.
