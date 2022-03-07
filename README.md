@@ -101,7 +101,6 @@ colours, Typography,
 - GitHub
 - HTML5
 - CSS3
-- Tailwind CSS
 - Python
 - JavaScript
 - jQuery
