@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # PCR installed apps
-
+    'posts',
     # Third Party apps
 
 ]
