@@ -53,7 +53,7 @@ Below are a list of user stories that are very basic and cover a lot of the user
 
 #### As a Site User:
 
-Maybe just link to GitHub Project... 
+Maybe just link to GitHub Project...
 
 1. I want to be able to understand the functionality of the application so I can decide if what the application offers is something I want.
 2. I want to feel welcomed and find the site easy to navigate and view so that as a junior developer I don't feel out of depth.
@@ -114,6 +114,8 @@ colours, Typography,
 - Heroku
 
 # Testing
+
+bump
 
 ## Tests
 
