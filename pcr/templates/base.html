@@ -1,24 +1,110 @@
-{% load static %}
+<!-- {% load static %} -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome import -->
+    <script
+      src="https://kit.fontawesome.com/51b9956ef3.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Static CSS -->
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <link rel="stylesheet" href="../static/css/style.css" />
 
-    {% comment %} Static CSS {% endcomment %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    {% comment %} Page Title {% endcomment %}
+    <!-- Page Title -->
     <title>Peer Code Review</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <section id="header">
+        <a id="logo" href="">
+            <h1> Peer Code Reviews</h1>
+        </a>
+        <nav id="nav-bar">
+            <div id="desktop-menu">
+                
+            </div>
+            <div id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+            </div>    
+        </nav>
+    </section>
+    <!-- Body -->
+    <section id="main">
+        <div class="container"></div>
+        <div class="container"></div>
+        <div class="container"></div>
+        <div class="container"></div>
+    </section>
 
-
-</head>
-<body>
-    {% comment %} Navigation {% endcomment %}
-
-    {% comment %} Footer {% endcomment %}
-
-</body>
+    <!-- Footer -->
+    <section id="footer">
+      <h2>Peer Code Reviews</h2>
+      <p>
+        A place for like minded developers no matter the experience, to share
+        their knowledge and review other developers code.
+      </p>
+      <div class="line-break"></div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">All Posts</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Help</a></li>
+        </ul>
+      </div>
+      <div class="line-break"></div>
+      <div class="footer-socials">
+        <ul>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit ficebook (opens in a new tab)"
+              href="https://www.facebook.com"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit the creators linkedin profile (opens in a new tab)"
+              href="https://www.linkedin.com"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit Instagram (opens in a new tab)"
+              href="https://www.instagram.com"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit the site creators github profile (opens in a new tab)"
+              href="https://www.github.com/roomacarthur"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-copyright">
+        <h6>&copy; Peer Code Reviews, All Rights Reserved 2022</h6>
+      </div>
+    </section>
+  </body>
 </html>
