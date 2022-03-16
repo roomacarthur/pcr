@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,37 +12,62 @@
       crossorigin="anonymous"
     ></script>
     <!-- Static CSS -->
-    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
     <!-- Page Title -->
     <title>Peer Code Review</title>
   </head>
   <body>
     <!-- Navigation -->
-    <section id="header">
-        <a id="logo" href="">
-            <h1> Peer Code Reviews</h1>
-        </a>
-        <nav id="nav-bar">
-            <div id="desktop-menu">
-                
-            </div>
-            <div id="mobile-menu">
-            <i class="fa-solid fa-bars"></i>
-            </div>    
-        </nav>
-    </section>
+    <header>
+      <div id="logo">
+      <a href="{% url 'homepage'%}">
+        Peer Code Reviews
+      </a></div>
+      <div id="search"></div>
+      <nav id="nav-bar">
+        <ul>
+          <li><a href="{% url 'homepage'%}">Home</a></li>
+          <li><a href="{% url 'all-posts'%}">All Posts</a></li>
+          <li><a href="{% url 'about-page'%}">About</a></li>
+          <li><a href="{% url 'help-page'%}">Help</a></li>
+          {% if user.is_authenticated %}
+          <li><a class="profile" href="{% url 'user-profile'%}"><i class="fa-solid fa-user"></i></a></li>
+          <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
+          {% else %}
+          <li><a class="btn login" href="{% url 'account_login'%}">Login</a></li>
+          <li><a class="btn signup" href="{% url 'account_signup'%}">Sign Up</a></li>
+          {% endif%}
+        </ul>
+      </nav>
+      <div id="hamburger-icon" onclick="toggleMobileNav(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <ul class="mobile-nav">
+          <li><a href="{% url 'homepage'%}">Home</a></li>
+          <li><a href="{% url 'all-posts'%}">All Posts</a></li>
+          <li><a href="{% url 'about-page'%}">About</a></li>
+          <li><a href="{% url 'help-page'%}">Help</a></li>
+          {% if user.is_authenticated %}
+          <li><a class="profile" href="{% url 'user-profile'%}"><i class="fa-solid fa-user"></i></a></li>
+          <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
+          {% else %}
+          <li><a class="btn login" href="{% url 'account_login'%}">Login</a></li>
+          <li><a class="btn signup" href="{% url 'account_signup'%}">Sign Up</a></li>
+          {% endif%}
+        </ul>
+      </div>
+    </header>
     <!-- Body -->
     <section id="main">
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
+      {% block content %}
+      <!-- Main page content goes here. -->
+      {% endblock content%}
     </section>
 
     <!-- Footer -->
-    <section id="footer">
+    <footer>
       <h2>Peer Code Reviews</h2>
       <p>
         A place for like minded developers no matter the experience, to share
@@ -51,10 +76,10 @@
       <div class="line-break"></div>
       <div class="footer-links">
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">All Posts</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Help</a></li>
+          <li><a href="{% url 'homepage'%}">Home</a></li>
+          <li><a href="{% url 'all-posts'%}">All Posts</a></li>
+          <li><a href="{% url 'about-page'%}">About</a></li>
+          <li><a href="{% url 'help-page'%}">Help</a></li>
         </ul>
       </div>
       <div class="line-break"></div>
@@ -105,6 +130,7 @@
       <div class="footer-copyright">
         <h6>&copy; Peer Code Reviews, All Rights Reserved 2022</h6>
       </div>
-    </section>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
