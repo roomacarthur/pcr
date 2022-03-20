@@ -8,6 +8,8 @@ class Post(models.Model):
     slug = models.SlugField(max_length=150, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post")
     content = models.TextField()
+    live_link = models.URLField(max_length=200, blank=True)
+    repo_link = models.URLField(max_length=200, blank=True)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
