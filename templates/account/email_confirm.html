@@ -1,4 +1,4 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 {% load account %}
@@ -7,6 +7,10 @@
 
 
 {% block content %}
+<section id="main">
+    <div class="container allauth">
+    </div>
+</section>
 <h1>{% trans "Confirm E-mail Address" %}</h1>
 
 {% if confirmation %}

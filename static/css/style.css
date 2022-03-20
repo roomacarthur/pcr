@@ -85,6 +85,15 @@ header a {
   border: 2px solid #fff;
   border-radius: 5px;
   padding: 5px 5px;
+  font-weight: 600;
+}
+.login-btn {
+  background-color: var(--grey);
+  color: var(--blue); 
+}
+.signup-btn {
+  background-color: var(--blue);
+  color: var(--grey); 
 }
 /* with help from: https://www.youtube.com/watch?v=OjQP7rPwJyE */
 #hamburger-icon {
@@ -125,6 +134,10 @@ header a {
   height: calc(100vh - 100px);
   width: 100%;
 }
+.mobile-nav > li {
+  margin: 10px 0;
+  list-style-type: none;
+}
 /*--------------------- Main content Styling */
 #main {
   /* display: grid; */
@@ -133,6 +146,7 @@ header a {
 .container {
   height: auto;
   width: 90%;
+  padding: 10px;
   margin: 15px auto;
   background-color: #fff;
   border-radius: 10px;
@@ -140,6 +154,50 @@ header a {
   box-shadow: 5px 10px 20px 3px rgba(0, 0, 0, 0.1);
 }
 
+
+/*--------------------- Allauth styling */
+.allauth > h1 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: var(--blue)
+
+}
+.allauth > p {
+  margin-bottom: 10px;
+}
+
+#id_login, #id_password, #id_email, #id_email2, #id_password1, #id_password2, #id_username{
+  background-color: var(--grey);
+  margin: 5px;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  padding: 15px 5px;
+  font-size: 16px;
+}
+
+/* allauth buttons buttons */
+.primaryAction {
+  background-color: var(--blue);
+  color: #fff;
+  width: 100%;
+  height: 30px;
+  margin: 10px auto;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 20px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 20px 3px rgba(0, 0, 0, 0.1);
+}
+
+.primaryAction:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
 /*--------------------- footer styling */
 footer {
   height: 225px;
@@ -197,6 +255,7 @@ footer > p {
   font-weight: 300;
 }
 
+
 /*--------------------- Media Queries */
 
 /* Responsive navigation */
@@ -207,5 +266,18 @@ footer > p {
   }
   #hamburger-icon {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 751px) {
+  .allauth{
+    width: 400px;
+  }
+  .primaryAction {
+    width: 250px;
+    display: flex;
+    margin: 10px auto;
+    justify-content: center;
+    align-items: center;
   }
 }

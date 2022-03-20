@@ -15,8 +15,6 @@
     <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
     <!-- Static CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    {% block css%}
-    {% endblock css%}
     <!-- Page Title -->
     <title>Peer Code Review</title>
   </head>
@@ -38,8 +36,8 @@
           <li><a class="profile" href="{% url 'user-profile'%}"><i class="fa-solid fa-user"></i></a></li>
           <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
           {% else %}
-          <li><a class="btn login" href="{% url 'account_login'%}">Login</a></li>
-          <li><a class="btn signup" href="{% url 'account_signup'%}">Sign Up</a></li>
+          <li><a class="btn login-btn" href="{% url 'account_login'%}">Login</a></li>
+          <li><a class="btn signup-btn" href="{% url 'account_signup'%}">Sign Up</a></li>
           {% endif%}
         </ul>
       </nav>
@@ -56,8 +54,8 @@
           <li><a class="profile" href="{% url 'user-profile'%}"><i class="fa-solid fa-user"></i></a></li>
           <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
           {% else %}
-          <li><a class="btn login" href="{% url 'account_login'%}">Login</a></li>
-          <li><a class="btn signup" href="{% url 'account_signup'%}">Sign Up</a></li>
+          <li><a class="btn login-btn" href="{% url 'account_login'%}">Login</a></li>
+          <li><a class="btn signup-btn" href="{% url 'account_signup'%}">Sign Up</a></li>
           {% endif%}
         </ul>
       </div>
