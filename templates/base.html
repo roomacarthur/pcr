@@ -15,7 +15,8 @@
     <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
     <!-- Static CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-
+    {% block css%}
+    {% endblock css%}
     <!-- Page Title -->
     <title>Peer Code Review</title>
   </head>
