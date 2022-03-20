@@ -96,7 +96,7 @@ AUTHENTICATION_BACKENDS = (
 )
 SITE_ID = 1
 # Print email confirmation into the console to ensure that the email verification and user registration is working properly. 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 # Ensure that an email is used.
@@ -107,7 +107,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 # Username must be at least 4 chars long
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = '/accounts/login/'
+
+LOGIN_URL = '/login/'
 # When user successfully logs in they will be redirected to the homepage.
 LOGIN_REDIRECT_URL = '/'
 

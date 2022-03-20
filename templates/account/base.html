@@ -1,4 +1,4 @@
-{% load static %}
+{% extends "base.html" %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,7 +30,6 @@
         {% endif %}
       </ul>
     </div>
-    {% block content %} {% endblock %} {% endblock %} {% block extra_body %} {%
-    endblock %}
+    {% block content %} {% endblock %} {% endblock %}
   </body>
 </html>
