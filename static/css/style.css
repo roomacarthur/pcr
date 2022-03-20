@@ -37,6 +37,8 @@ h6,
 a {
   font-family: "Lato", sans-serif;
   letter-spacing: 1px;
+  color: var(--blue);
+  text-transform: uppercase;
 }
 /*--------------------- Header styling */
 header {
@@ -101,12 +103,24 @@ header a {
   display: none;
   cursor: pointer;
 }
-#hamburger-icon div {
+#hamburger-icon .bar {
   width: 35px;
   height: 3px;
   background-color: #fff;
   margin: 6px 0;
   transition: 0.3s;
+}
+#hamburger-icon #search-bar-mobile {
+  margin-top: 20px;
+  width: 300px;
+  height: 30px;
+  background-color: #fff;
+  color: var(--lightgrey);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
 }
 .open .bar1 {
   -webkit-transform: rotate(-45deg) translate(-6px, 6px);
@@ -254,7 +268,9 @@ footer > p {
 .footer-copyright > h6 {
   font-weight: 300;
 }
-
+footer > h2, h6 {
+  color: #fff;
+}
 
 /*--------------------- Media Queries */
 

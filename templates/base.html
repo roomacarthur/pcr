@@ -25,7 +25,6 @@
       <a href="{% url 'homepage'%}">
         Peer Code Reviews
       </a></div>
-      <div id="search"></div>
       <nav id="nav-bar">
         <ul>
           <li><a href="{% url 'homepage'%}">Home</a></li>
@@ -33,6 +32,7 @@
           <li><a href="{% url 'about-page'%}">About</a></li>
           <li><a href="{% url 'help-page'%}">Help</a></li>
           {% if user.is_authenticated %}
+          <li><a class="create-btn" href="{% url 'new-post'%}"><i class="fa-solid fa-plus"></i></a></li>
           <li><a class="profile" href="{% url 'user-profile'%}"><i class="fa-solid fa-user"></i></a></li>
           <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
           {% else %}
@@ -42,16 +42,17 @@
         </ul>
       </nav>
       <div id="hamburger-icon" onclick="toggleMobileNav(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
         <ul class="mobile-nav">
-          <div id="search"></div>
+          <li><div id="search-bar-mobile">Search...</div></li>
           <li><a href="{% url 'homepage'%}">Home</a></li>
           <li><a href="{% url 'all-posts'%}">All Posts</a></li>
           <li><a href="{% url 'about-page'%}">About</a></li>
           <li><a href="{% url 'help-page'%}">Help</a></li>
           {% if user.is_authenticated %}
+          <li><a class="create-btn" href="{% url 'new-post'%}"><i class="fa-solid fa-plus"></i></a></li>
           <li><a class="profile" href="{% url 'user-profile'%}"><i class="fa-solid fa-user"></i></a></li>
           <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
           {% else %}
@@ -60,9 +61,12 @@
           {% endif%}
         </ul>
       </div>
+    </div>
     </header>
     <!-- Body -->
+ 
     <section id="main">
+      
       {% block content %}
       <!-- Main page content goes here. -->
       {% endblock content%}
