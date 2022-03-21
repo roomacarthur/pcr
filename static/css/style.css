@@ -173,11 +173,13 @@ header a {
 .allauth > h1 {
   margin-bottom: 10px;
   text-transform: uppercase;
-  color: var(--blue)
-
 }
 .allauth > p {
   margin-bottom: 10px;
+}
+.errorlist > li {
+  list-style-type: none;
+  text-decoration: underline;
 }
 
 #id_login, #id_password, #id_email, #id_email2, #id_password1, #id_password2, #id_username{
