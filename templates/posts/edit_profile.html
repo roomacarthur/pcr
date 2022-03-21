@@ -1,0 +1,32 @@
+{% extends "../base.html" %}
+{% block head_title %}
+Profile
+{% endblock %}
+{% block content %}
+
+
+<section id="main">
+    <div class="container profile">
+        <h2 class="profile-user">UserName</h2>
+        <div class="usergithub">
+            <a
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit This users github profile (opens in a new tab)"
+            href="#"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <!-- User since (date) -->
+        <p class="profile-since">Member sinde: --date-- </p>
+        
+        <ul>
+            <li>Posts</li>
+            <li>reviews</li>
+            <li>Score</li>
+        </ul>
+    </div>
+</section>
+
+{%endblock%}
