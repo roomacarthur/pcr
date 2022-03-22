@@ -33,7 +33,6 @@
           <li><a href="{% url 'help-page'%}">Help</a></li>
           {% if user.is_authenticated %}
           <li><a class="create-btn" href="{% url 'new-post'%}"><i class="fa-solid fa-plus"></i></a></li>
-          <li><a class="profile" href="{% url 'user-profile'%}"><i class="fa-solid fa-user"></i></a></li>
           <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
           {% else %}
           <li><a class="btn login-btn" href="{% url 'account_login'%}">Login</a></li>
@@ -53,7 +52,6 @@
           <li><a href="{% url 'help-page'%}">Help</a></li>
           {% if user.is_authenticated %}
           <li><a class="create-btn" href="{% url 'new-post'%}"><i class="fa-solid fa-plus"></i></a></li>
-          <li><a class="profile" href="{% url 'user-profile'%}"><i class="fa-solid fa-user"></i></a></li>
           <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
           {% else %}
           <li><a class="btn login-btn" href="{% url 'account_login'%}">Login</a></li>

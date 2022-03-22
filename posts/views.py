@@ -12,9 +12,6 @@ def all_posts(request):
 def post_details(request):
     return render(request, 'posts/post_details.html')
 
-def user_profile(request):
-    return render(request, 'posts/profile.html')
-
 def about(request):
     return render(request, 'posts/about.html')
 
