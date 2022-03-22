@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 import dj_database_url
 
-
+# handle env.py during development.
 if os.path.isfile('env.py'):
     import env
 
@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # PCR installed apps
     'posts',
+    # Third Party
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +76,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',# allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages', 
             ],
@@ -158,18 +160,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# All static files are handled with whitenoise.
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-# STATIC_ROOT = os.path.join(BASE_DIR, 'live-static-files', 'static-root')
-
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'live-static-files', 'media-root' )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
