@@ -10,7 +10,7 @@ class Post(models.Model):
     content = models.TextField()
     live_link = models.URLField(max_length=200, blank=True)
     repo_link = models.URLField(max_length=200, blank=True)
-    created_on = models.DateTimeField(auto_now=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
     approved = models.BooleanField(default=True)
@@ -27,7 +27,7 @@ class Post(models.Model):
 class Review(models.Model):
     name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="Rreview")
     review = models.TextField()
-    created_on = models.DateTimeField(auto_now=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     votes = models.ManyToManyField(User, related_name="Review_likes", blank=True)
     approved = models.BooleanField(default=True)
