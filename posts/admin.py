@@ -19,11 +19,14 @@ admin.site.register(Post, PostAdmin)
 
 class ReviewAdmin(admin.ModelAdmin):
     list_filter = ("updated_on", "created_on", "approved")
-    list_display = ("name", "created_on", "approved")
-    search_fields = ["name", "review"]
-    actions = ["approve_comments"]
+    list_display = ("created_on", "approved")
+    search_fields = ["post", "review"]
+    actions = ["approve_reviews", "unapprove_reviews"]
 
-    def approve_comments(self, request, queryset):
+    def approve_reviews(self, request, queryset):
+        queryset.update(approved=True)
+    
+    def unapprove_reviews(self, request, queryset):
         queryset.update(approved=False)
 
 admin.site.register(Review, ReviewAdmin)
