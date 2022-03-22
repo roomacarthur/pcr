@@ -171,6 +171,17 @@ header a {
 
 
 /*--------------------- All posts styling */
+.all-posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.create-post {
+  background-color: var(--blue);
+  color: #fff;
+  font-weight: 400;
+  padding: 10px;
+}
 .post-link {
   text-decoration: none;
 }
