@@ -50,9 +50,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # PCR installed apps
     'posts',
-    # Third Party
-    'django_summernote',
-
 ]
 
 MIDDLEWARE = [
