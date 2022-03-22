@@ -1,21 +1,39 @@
 {% extends "../base.html" %}
 {% block head_title %}
-Post Details
+{{ post.title }}
 {% endblock %}
 {% block content %}
-{% load cripsy_forms_tags %}
 
 
-<section id="main">
-    <div class="container main-post">
-        <!--Post will go here.-->
+
+{% for post in post_list %}
+<div class="container post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.author }}</p>
+    <p>{{ post.created_on }}</p>
+
+
+    <div class="post-content">
+        <p> {{ post.content }}</P>
+        <ul>
+            <li><a href="{{ post.repo_link }}"><i class="fa-brands fa-github"></i></a>
+            <li><a href="{{ post.Live_link }}"><i class="fa-solid fa-browser"></i></a>
+        </ul>
+        <div>
+            16 <i class="fa-solid fa-heart"></i>
+        </div>
+        <p>Last edited: {{ post.edited_on}}</p>
     </div>
-    <div class="container comment">
+{% with reviews.count as total_reviews %}
+<div class="reviews-count"><span class="count">{{ total_reviews}}</span><i class="fa-solid fa-comment"></i></div>
+{% endwith %}
+</div>
 
-    </div>
-    <div class="container create-comment">
 
-    </div>
-</section>
-
+<div class="container reviews">
+    <h4>{{ reviews.name }}</h4>
+    <p> {{ reviews.created_on }}</p>
+    <p> {{ reviews.review }}
+</div>
+{% endfor %}
 {%endblock%}
