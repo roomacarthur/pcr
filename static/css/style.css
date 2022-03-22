@@ -162,6 +162,7 @@ header a {
   width: 90%;
   padding: 10px;
   margin: 15px auto;
+  text-decoration: none;
   background-color: #fff;
   border-radius: 10px;
   -webkit-box-shadow: 5px 10px 20px 3px rgba(0, 0, 0, 0.1);
@@ -169,6 +170,36 @@ header a {
 }
 
 
+/*--------------------- All posts styling */
+.post-link {
+  text-decoration: none;
+}
+.post > h3 {
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-transform: none;
+}
+.post-content{
+  margin: 10px 0px;
+  color: var(--text);
+  justify-content: center;
+}
+.post-content > ul > li {
+  list-style-type: none;
+}
+.post-author > h4 {
+  text-transform: none;
+  color: var(--bold)
+}
+.post-date {
+  font-size: 14px;
+  text-transform: lowercase;
+}
+.post-likes {
+  color: #ff0000;
+  display:flex;
+  float:right;
+}
 /*--------------------- Allauth styling */
 .allauth > h1 {
   margin-bottom: 10px;
@@ -297,5 +328,8 @@ footer > h2, h6 {
     margin: 10px auto;
     justify-content: center;
     align-items: center;
+  }
+  .post {
+    width: 50%
   }
 }
