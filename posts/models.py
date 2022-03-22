@@ -13,6 +13,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
+    approved = models.BooleanField(default=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -29,6 +30,7 @@ class Review(models.Model):
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
     votes = models.ManyToManyField(User, related_name="Review_likes", blank=True)
+    approved = models.BooleanField(default=True)
 
     class Meta:
         ordering = ["-created_on"]
