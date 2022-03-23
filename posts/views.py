@@ -7,9 +7,6 @@ from .models import Post, Review
 def home(request):
     return render(request, 'posts/index.html')
 
-def post_details(request):
-    return render(request, 'posts/post_details.html')
-
 def about(request):
     return render(request, 'posts/about.html')
 
@@ -34,18 +31,18 @@ class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(approved=True)
         post = get_object_or_404(queryset, slug=slug)
-        reviews = Review.reviews.filter(approved=True).order_by('-created_on')
-        votes = False
+        reviews = post.reviews.filter(approved=True).order_by('created_on')
+        likes = False
         
         if post.likes.filter(id=self.request.user.id).exists():
-            votes=True
+            likes=True
         
         return render(
             request, 'posts/post_details.html',
             {
                 "post": post,
                 "reviews": reviews,
-                "votes": votes
+                "likes": likes
             },
         )
         
