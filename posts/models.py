@@ -25,7 +25,7 @@ class Post(models.Model):
         return self.likes.count()
 
 class Review(models.Model):
-    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="Rreview")
+    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="Review")
     review = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -36,5 +36,5 @@ class Review(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+        return f"Comment {self.review} by {self.name}"
     
