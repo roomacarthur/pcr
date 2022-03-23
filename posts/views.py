@@ -35,14 +35,14 @@ class PostDetail(View):
         votes = False
         
         if post.likes.filter(id=self.request.user.id).exists():
-            votes=True
+            likes=True
         
         return render(
             request, 'posts/post_details.html',
             {
                 "post": post,
                 "reviews": reviews,
-                "votes": votes
+                "likes": likes
             },
         )
         
