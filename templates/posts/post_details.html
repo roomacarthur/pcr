@@ -19,7 +19,7 @@
             <li><a href="{{ post.Live_link }}"><i class="fa-solid fa-browser"></i></a>
         </ul>
         <div>
-            16 <i class="fa-solid fa-heart"></i>
+            {{ post.likes.count }} <i class="fa-solid fa-heart"></i>
         </div>
         <p>Last edited: {{ post.updated_on }}</p>
     </div>
@@ -28,11 +28,11 @@
 {% endwith %}
 </div>
 
-
+{% for reviews in review_list %}
 <div class="container reviews">
     <h4>{{ reviews.name }}</h4>
     <p> {{ reviews.created_on }}</p>
     <p> {{ reviews.review }}
 </div>
-
+{% endfor %}
 {%endblock%}

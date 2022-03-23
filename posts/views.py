@@ -32,7 +32,7 @@ class PostDetail(View):
         queryset = Post.objects.filter(approved=True)
         post = get_object_or_404(queryset, slug=slug)
         reviews = Review.objects.filter(approved=True).order_by('-created_on')
-        votes = False
+        likes = False
         
         if post.likes.filter(id=self.request.user.id).exists():
             likes=True
