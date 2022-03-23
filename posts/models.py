@@ -26,16 +26,16 @@ class Post(models.Model):
 
 class Review(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
-    name = models.ForeignKey(User, on_delete=models.CASCADE,related_name="review")
-    review = models.TextField()
+    name = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     votes = models.ManyToManyField(User, related_name="Review_likes", blank=True)
     approved = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["-created_on"] 
 
     def __str__(self):
-        return f"Comment {self.review} by {self.name}"
+        return f"Comment {self.body} by {self.name}"
     
