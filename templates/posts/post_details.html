@@ -6,7 +6,6 @@
 
 
 
-{% for post in post_list %}
 <div class="container post">
     <h3>{{ post.title }}</h3>
     <p>{{ post.author }}</p>
@@ -22,7 +21,7 @@
         <div>
             16 <i class="fa-solid fa-heart"></i>
         </div>
-        <p>Last edited: {{ post.edited_on}}</p>
+        <p>Last edited: {{ post.updated_on }}</p>
     </div>
 {% with reviews.count as total_reviews %}
 <div class="reviews-count"><span class="count">{{ total_reviews}}</span><i class="fa-solid fa-comment"></i></div>
@@ -35,5 +34,5 @@
     <p> {{ reviews.created_on }}</p>
     <p> {{ reviews.review }}
 </div>
-{% endfor %}
+
 {%endblock%}

@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pcr-roo.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['pcr-roo.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -101,7 +101,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 # Ensure that an email is used.
 ACCOUNT_EMAIL_REQUIRED = True
 # Verifying email is mandatory to ensure that the email is real and prevents bots.
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
 # Enter email twice to ensure it is correct
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 # Username must be at least 4 chars long
