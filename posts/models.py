@@ -25,7 +25,8 @@ class Post(models.Model):
         return self.likes.count()
 
 class Review(models.Model):
-    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="Review")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    name = models.ForeignKey(User, on_delete=models.CASCADE,related_name="review")
     review = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

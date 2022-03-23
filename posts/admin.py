@@ -19,7 +19,7 @@ admin.site.register(Post, PostAdmin)
 
 class ReviewAdmin(admin.ModelAdmin):
     list_filter = ("updated_on", "created_on", "approved")
-    list_display = ("created_on", "approved")
+    list_display = ("post", "name", "created_on", "approved")
     search_fields = ["post", "review"]
     actions = ["approve_reviews", "unapprove_reviews"]
 
