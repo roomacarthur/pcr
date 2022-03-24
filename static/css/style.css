@@ -63,8 +63,6 @@ header a {
   font-size: 30px;
   font-weight: 700;
 }
-#logo > a:hover {
-}
 #nav-bar > ul {
   list-style: none;
   display: flex;
@@ -182,6 +180,10 @@ header a {
   font-weight: 400;
   padding: 10px;
 }
+.post{
+  display: flex;
+  flex-direction: column;
+}
 .post-link {
   text-decoration: none;
 }
@@ -193,7 +195,6 @@ header a {
 .post-content{
   margin: 10px 0px;
   color: var(--text);
-  justify-content: center;
 }
 .post-content > ul > li {
   list-style-type: none;
@@ -210,6 +211,13 @@ header a {
   color: #ff0000;
   display:flex;
   float:right;
+}
+.pagination{
+  list-style-type: none;
+}
+.page-link {
+  text-decoration: none;
+  list-style-type: none;
 }
 /*--------------------- Allauth styling */
 .allauth > h1 {
@@ -255,6 +263,69 @@ header a {
 .primaryAction:hover {
   transform: scale(1.1);
   transition: 0.3s;
+}
+
+
+/*--------------------- form styling */
+.control-label{
+  color: var(--blue);
+  font-weight: 700;
+  margin: 5px;
+}
+.control-group {
+  width: 100%;
+}
+.textarea {
+  border-radius: 10px;
+  margin: 5px;
+  width: 90%;
+  padding: 10px;
+}
+.add-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit-btn {
+  background-color: var(--blue);
+  color: #fff;
+  padding: 10px;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+form{
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.asteriskField {
+  display: none;
+}
+.textinput, .urlinput {
+  margin: 5px;
+}
+/*--------------------- poste detail styling */
+
+.reviews{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.review-content > .post-date{
+  color: var(--lightgrey)
+}
+.review-content > .post-edit {
+  font-size: 10px;
+}
+.review-vote{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /*--------------------- footer styling */
 footer {
@@ -340,7 +411,10 @@ footer > h2, h6 {
     justify-content: center;
     align-items: center;
   }
-  .post {
+  .post, .reviews {
     width: 50%
+  }
+  .textarea{
+    width: 100%;
   }
 }

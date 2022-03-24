@@ -8,8 +8,8 @@
 
 <div class="container post">
     <h3>{{ post.title }}</h3>
-    <p>{{ post.author }}</p>
-    <p>{{ post.created_on }}</p>
+    <p class="post-author">{{ post.author }}</p>
+    <p class="post-date">{{ post.created_on }}</p>
 
 
     <div class="post-content">
@@ -29,10 +29,13 @@
 </div>
 {% for review in reviews %}
 <div class="container reviews">
+    <div class="review-content">
     <h4>{{ review.name }}</h4>
-    <p> {{ review.created_on }}</p>
-    <p> {{ review.body | linebreaks }} </p>
-    <div>
+    <p class="post-date"> {{ review.created_on }}</p>
+    <p class="post-content"> {{ review.body }} </p>
+    <p class="post-date post-edit"><em> EDITED: {{ review.updated_on }}</em></p>
+    </div>
+    <div class="review-vote">
         <div><i class="fa-solid fa-angle-up"></i></div>
         <div>{{ review.votes.count }}</div>
         <div><i class="fa-solid fa-angle-down"></i></div>
@@ -40,13 +43,12 @@
 </div>
 {% endfor %}
 
-<div class="container">
-
+<div class="container reviews add-reviews">
     {% if user.is_authenticated %}
         <form method="post">
             {{ review_form | crispy }}
             {% csrf_token %}
-            <button type="submit">Post</button>
+            <button class="btn submit-btn" type="submit">Post</button>
         </form>
     {% else %}
         <a class="btn login-btn" href="{% url 'account_login'%}">Login to post a review.</a>

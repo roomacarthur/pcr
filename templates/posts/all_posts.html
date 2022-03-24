@@ -3,6 +3,7 @@
 Posts
 {% endblock %}
 {% block content %}
+</div>
 <div class="container all-posts-header">
   <h2>All posts</h2>
 
@@ -21,38 +22,39 @@ Posts
         <div class="container post">
             <h3>{{ post.title }}</h3>
             <div class="post-content">
+              <div class="post-info">
                 <ul>
                     <li class="post-author"><h4>{{ post.author }}</h4></li>
                     <li class="post-date"><em>{{ post.created_on }}</em></li>
-                    <li class="post-likes">{{ post.likes.count }} <i class="fa-solid fa-heart"></i></li>
                 <ul>
+              </div>
+              <div class="post-likes">
+                <li class="post-likes">{{ post.likes.count }} <i class="fa-solid fa-heart"></i></li>
+              </div>
             </div>
-            
         </div>
     </a>
-
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center">
-        {% if page_obj.has_previous %}
-        <li>
-          <a href="?page={{ page_obj.previous_page_number }}" class="page-link"
-            >&laquo; PREV
-          </a>
-        </li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li>
-          <a href="?page={{ page_obj.next_page_number }}" class="page-link">
-            NEXT &raquo;</a
-          >
-        </li>
-  
-        {% endif %}
-      </ul>
-    </nav>
-    {% endif %}
 {% endfor %}
 
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li>
+      <a href="?page={{ page_obj.previous_page_number }}" class="page-link">
+      <i class="fa-solid fa-arrow-right-to-line"></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li>
+      <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+        <i class="fa-solid fa-arrow-left-from-line"></i></a
+      >
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
 
 {%endblock%}

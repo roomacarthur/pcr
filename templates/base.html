@@ -28,7 +28,6 @@
       <nav id="nav-bar">
         <ul>
           <li><a href="{% url 'homepage'%}">Home</a></li>
-          <li><a href="{% url 'all-posts'%}">All Posts</a></li>
           <li><a href="{% url 'about-page'%}">About</a></li>
           <li><a href="{% url 'help-page'%}">Help</a></li>
           {% if user.is_authenticated %}
@@ -46,7 +45,6 @@
         <div class="bar bar3"></div>
         <ul class="mobile-nav">
           <li><a href="{% url 'homepage'%}">Home</a></li>
-          <li><a href="{% url 'all-posts'%}">All Posts</a></li>
           <li><a href="{% url 'about-page'%}">About</a></li>
           <li><a href="{% url 'help-page'%}">Help</a></li>
           {% if user.is_authenticated %}

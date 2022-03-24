@@ -10,3 +10,6 @@ class ReviewForm(forms.ModelForm):
     class Meta: 
         model = Review
         fields = ("body",)
+        labels = {
+            "body": "Post a review:"
+        }

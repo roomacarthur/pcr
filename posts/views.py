@@ -22,7 +22,7 @@ def help(request):
 class AllPosts(generic.ListView):
     model = Post
     queryset = Post.objects.filter(approved=True).order_by('-created_on')
-    template_name = 'posts/all_posts.html'
+    template_name = 'posts/index.html'
     paginate_by = 10
 # posts view for homepage
 
@@ -53,7 +53,7 @@ class PostDetail(View):
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(approved=True)
         post = get_object_or_404(queryset, slug=slug)
-        reviews = post.objects.filter(approved=True).order_by('created_on')
+        reviews = post.reviews.filter(approved=True).order_by('created_on')
         likes = False
         
         if post.likes.filter(id=self.request.user.id).exists():
@@ -108,3 +108,4 @@ class UpdatePost(UpdateView):
         post.author = request.user
         post.save()
         return HttpResponseRedirect("/")
+ 
