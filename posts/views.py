@@ -80,9 +80,11 @@ class PostDetail(View):
 def new_post(request):
     
     if request.method == "POST":
+        
         new_post_form = PostForm(data=request.POST)
+
         if new_post_form.is_valid():
-            new_post_form.instance.name = request.user.username
+            new_post_form.instance.author = request.user
             form = new_post_form.save(commit=False)
             form.save()
             return HttpResponseRedirect("/")
@@ -91,20 +93,6 @@ def new_post(request):
 
     return render(request, "posts/new_post.html", {"form": form})
 
-# def new_post(request):
-#     post_form = PostForm()
-
-#     if request.method == "POST":
-#         model = Post()
-#         results = Post.objects.filter(author=request.user, title=request.POST.get("title"))
-#         post_form = PostForm(request.POST, request.FILES)
-
-#         if post_form.is_valid():
-#             return render(request, "posts/new_post.html", { "post_form": PostForm()})
-        
-#         else:
-#             post = post_form.save(commit=False)
-            
 
 #update post view
 # class UpdatePost(UpdateView):
