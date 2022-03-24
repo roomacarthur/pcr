@@ -33,7 +33,8 @@ class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(approved=True)
         post = get_object_or_404(queryset, slug=slug)
-        reviews = Review.objects.filter(approved=True).order_by('created_on')
+
+        reviews = post.reviews.filter(approved=True).order_by('created_on')
         likes = False
         
         if post.likes.filter(id=self.request.user.id).exists():
@@ -52,7 +53,7 @@ class PostDetail(View):
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(approved=True)
         post = get_object_or_404(queryset, slug=slug)
-        reviews = Review.objects.filter(approved=True).order_by('created_on')
+        reviews = post.objects.filter(approved=True).order_by('created_on')
         likes = False
         
         if post.likes.filter(id=self.request.user.id).exists():
@@ -78,33 +79,32 @@ class PostDetail(View):
 
 # allow user to submit a new post to the site.
 def new_post(request):
-    
     if request.method == "POST":
-        
-        new_post_form = PostForm(data=request.POST)
 
+        new_post_form = PostForm(data=request.POST)
         if new_post_form.is_valid():
             new_post_form.instance.author = request.user
             form = new_post_form.save(commit=False)
             form.save()
             return HttpResponseRedirect("/")
+
     else:
         form = PostForm()
 
     return render(request, "posts/new_post.html", {"form": form})
 
 
-#update post view
-# class UpdatePost(UpdateView):
-#     model = Post
-#     form = PostForm
-#     template_name = "posts/update_post.html"
+#   update post view
+class UpdatePost(UpdateView):
+    model = Post
+    form = PostForm
+    template_name = "posts/update_post.html"
 
-#     def form_valid(self, form):
-#         request = self.request
-#         post = form.save(sommit=False)
-#         post.title = request.POST.getlist("title")
-#         post.content = request.POST.getlist("content")
-#         post.author = request.user
-#         post.save()
-#         return HttpResponseRedirect("/")
+    def form_valid(self, form):
+        request = self.request
+        post = form.save(sommit=False)
+        post.title = request.POST.getlist("title")
+        post.content = request.POST.getlist("content")
+        post.author = request.user
+        post.save()
+        return HttpResponseRedirect("/")
