@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic, View
+from django.views.generic import UpdateView, DeleteView
 from django.utils.text import slugify
 from django.shortcuts import get_object_or_404, render
 from .models import Post, Review
@@ -56,9 +57,7 @@ class PostDetail(View):
         
         if post.likes.filter(id=self.request.user.id).exists():
             likes=True
-
         review_form = ReviewForm(data=request.POST)
-
         if review_form.is_valid():
             review_form.instance.name = request.user.username
             review = review_form.save(commit=False)
@@ -79,11 +78,12 @@ class PostDetail(View):
 
 # allow user to submit a new post to the site.
 def new_post(request):
-    user = request.user.id
+    
     if request.method == "POST":
-        form = PostForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.author = user
+        new_post_form = PostForm(data=request.POST)
+        if new_post_form.is_valid():
+            new_post_form.instance.name = request.user.username
+            form = new_post_form.save(commit=False)
             form.save()
             return HttpResponseRedirect("/")
     else:
@@ -91,3 +91,32 @@ def new_post(request):
 
     return render(request, "posts/new_post.html", {"form": form})
 
+# def new_post(request):
+#     post_form = PostForm()
+
+#     if request.method == "POST":
+#         model = Post()
+#         results = Post.objects.filter(author=request.user, title=request.POST.get("title"))
+#         post_form = PostForm(request.POST, request.FILES)
+
+#         if post_form.is_valid():
+#             return render(request, "posts/new_post.html", { "post_form": PostForm()})
+        
+#         else:
+#             post = post_form.save(commit=False)
+            
+
+#update post view
+# class UpdatePost(UpdateView):
+#     model = Post
+#     form = PostForm
+#     template_name = "posts/update_post.html"
+
+#     def form_valid(self, form):
+#         request = self.request
+#         post = form.save(sommit=False)
+#         post.title = request.POST.getlist("title")
+#         post.content = request.POST.getlist("content")
+#         post.author = request.user
+#         post.save()
+#         return HttpResponseRedirect("/")

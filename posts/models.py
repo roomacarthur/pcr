@@ -1,10 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 # Main Post model.
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=150, unique=True)
+    slug = models.SlugField(max_length=150, unique=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post")
     content = models.TextField()
     live_link = models.URLField(max_length=200, blank=True)
@@ -25,6 +26,11 @@ class Post(models.Model):
     # Helper to return the total count of likes on post.
     def total_likes(self):
         return self.likes.count()
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args,**kwargs)
 
 # Review Model.
 class Review(models.Model):
