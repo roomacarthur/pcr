@@ -3,7 +3,16 @@
 Create Post
 {% endblock %}
 {% block content %}
+{% load crispy_forms_tags %}
 
-<h1>Create A Post</hi>
-
+<div class="container">
+    {% if user.is_authenticated %}
+        <h1>Create a New Post: </h1>
+        <form method="post">
+            {{ form | crispy }}
+            {% csrf_token %}
+            <button type="submit">Post</button>
+        </form>
+    {% endif %}
+</div>
 {%endblock%}

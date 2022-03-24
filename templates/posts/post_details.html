@@ -3,7 +3,7 @@
 {{ post.title }}
 {% endblock %}
 {% block content %}
-
+{% load crispy_forms_tags %}
 
 
 <div class="container post">
@@ -15,8 +15,8 @@
     <div class="post-content">
         <p> {{ post.content }}</P>
         <ul>
-            <li><a href="{{ post.repo_link }}"><i class="fa-brands fa-github"></i></a>
-            <li><a href="{{ post.Live_link }}"><i class="fa-solid fa-browser"></i></a>
+            <li><a href="{{ post.repo_link }}" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="{{ post.live_link }}" target="_blank"><i class="fa-solid fa-browser"></i></a></li>
         </ul>
         <div>
             {{ post.likes.count }} <i class="fa-solid fa-heart"></i>
@@ -27,12 +27,29 @@
 <div class="reviews-count"><span class="count">{{ total_reviews}}</span><i class="fa-solid fa-comment"></i></div>
 {% endwith %}
 </div>
-
-{% for reviews in review_list %}
+{% for review in reviews %}
 <div class="container reviews">
-    <h4>{{ reviews.name }}</h4>
-    <p> {{ reviews.created_on }}</p>
-    <p> {{ reviews.review }}
+    <h4>{{ review.name }}</h4>
+    <p> {{ review.created_on }}</p>
+    <p> {{ review.body | linebreaks }} </p>
+    <div>
+        <div><i class="fa-solid fa-angle-up"></i></div>
+        <div>{{ review.votes.count }}</div>
+        <div><i class="fa-solid fa-angle-down"></i></div>
+    </div>
 </div>
 {% endfor %}
+
+<div class="container">
+
+    {% if user.is_authenticated %}
+        <form method="post">
+            {{ review_form | crispy }}
+            {% csrf_token %}
+            <button type="submit">Post</button>
+        </form>
+    {% else %}
+        <a class="btn login-btn" href="{% url 'account_login'%}">Login to post a review.</a>
+    {% endif %}
+</div>
 {%endblock%}
