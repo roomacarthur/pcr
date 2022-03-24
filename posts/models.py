@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User 
 
-# Create your models here.
-
+# Main Post model.
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
@@ -15,27 +14,33 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
     approved = models.BooleanField(default=True)
 
+    # Order posts by creation date in decending order(Newest to the top.)
     class Meta:
         ordering = ["-created_on"]
 
+    # Magic method to return a string representation of object.
     def __str__(self):
         return self.title
 
+    # Helper to return the total count of likes on post.
     def total_likes(self):
         return self.likes.count()
 
+# Review Model.
 class Review(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    name = models.ForeignKey(User, on_delete=models.CASCADE,related_name="review")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="reviews")
+    name = models.CharField(max_length=50)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     votes = models.ManyToManyField(User, related_name="Review_likes", blank=True)
     approved = models.BooleanField(default=True)
 
+    # Order posts by creation date in ascending order. 
     class Meta:
         ordering = ["created_on"]
 
+    # Helper to return an F string representation of object.
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
     
