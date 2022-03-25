@@ -7,33 +7,45 @@
 
 
 <div class="container post">
-    <h3>{{ post.title }}</h3>
-    <p class="post-author">{{ post.author }}</p>
+    <h3 class="postdetail-title">{{ post.title }}</h3>
+    <h4 class="postdetail-author">{{ post.author }}</h4>
     <p class="post-date">{{ post.created_on }}</p>
-
-
     <div class="post-content">
         <p> {{ post.content }}</P>
-        <ul>
-            <li><a href="{{ post.repo_link }}" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-            <li><a href="{{ post.live_link }}" target="_blank"><i class="fa-solid fa-browser"></i></a></li>
-        </ul>
-        <div>
-            {{ post.likes.count }} <i class="fa-solid fa-heart"></i>
+        <div class="post-links">
+            <a class="postdetail-link" href="{{ post.repo_link }}" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="postdetail-link" href="{{ post.live_link }}" target="_blank">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
         </div>
-        <p>Last edited: {{ post.updated_on }}</p>
+        <p class="post-content-edit">
+            <em>Last edited: {{ post.updated_on }}</em>
+        </p>
     </div>
-{% with reviews.count as total_reviews %}
-<div class="reviews-count"><span class="count">{{ total_reviews}}</span><i class="fa-solid fa-comment"></i></div>
-{% endwith %}
+
+    <div class="post-data">
+        <div>
+            <span class="likes-count">
+            {{ post.likes.count }} <i class="data fa-solid fa-heart"></i>
+            </span>
+        </div>
+        {% with reviews.count as total_reviews %}
+        <div class="reviews-count">
+            <span class="count">{{ total_reviews}}</span>
+            <i class="data fa-solid fa-comment"></i>
+        </div>
+        {% endwith %}
+    </div>
 </div>
 {% for review in reviews %}
 <div class="container reviews">
     <div class="review-content">
-    <h4>{{ review.name }}</h4>
-    <p class="post-date"> {{ review.created_on }}</p>
-    <p class="post-content"> {{ review.body }} </p>
-    <p class="post-date post-edit"><em> EDITED: {{ review.updated_on }}</em></p>
+        <h4>{{ review.name }}</h4>
+        <p class="post-date"> {{ review.created_on }}</p>
+        <p class="post-content"> {{ review.body }} </p>
+        <p class="post-date post-edit"><em> EDITED: {{ review.updated_on }}</em></p>
     </div>
     <div class="review-vote">
         <div><i class="fa-solid fa-angle-up"></i></div>
@@ -42,7 +54,6 @@
     </div>
 </div>
 {% endfor %}
-
 <div class="container reviews add-reviews">
     {% if user.is_authenticated %}
         <form method="post">

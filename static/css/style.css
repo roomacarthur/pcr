@@ -168,7 +168,7 @@ header a {
 }
 
 
-/*--------------------- All posts styling */
+/*--------------------- posts styling */
 .all-posts-header {
   display: flex;
   justify-content: space-between;
@@ -218,6 +218,40 @@ header a {
 .page-link {
   text-decoration: none;
   list-style-type: none;
+}
+.post-content-edit {
+  font-size: 10px;
+}
+.post-data{
+  display: flex;
+  justify-content: center;
+}
+.post-data > div {
+  margin: 0 10px;
+}
+.data {
+  font-size: 20px;
+}
+.post-links{
+  display: flex;
+}
+.postdetail-title{
+  font-size: 24px;;
+}
+.postdetail-author{
+  padding: 10px 0;
+}
+.postdetail-link{
+  font-size: 20px;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.reviews-count{
+  color: var(--text);
+}
+.likes-count{
+  color:#ff0000;
 }
 /*--------------------- Allauth styling */
 .allauth > h1 {
