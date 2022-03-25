@@ -23,7 +23,6 @@ class AllPosts(generic.ListView):
     model = Post
     queryset = Post.objects.filter(approved=True).order_by('-created_on')
     template_name = 'posts/index.html'
-    paginate_by = 10
 # posts view for homepage
 
 # post detail view.
