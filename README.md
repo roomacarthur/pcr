@@ -21,39 +21,87 @@ With the aim of PCR being to allow people to get a better understanding of their
 
 The main overarching target audience for PCR is that of people who are in Development no matter there level of experience, Ideally the main focus is to aid newcomers and junior developers in creating better projects.
 
-## Strategy
 
 ### User Stories
 
-Below are a list of user stories that are very basic and cover a lot of the user and admin needs for PCR. The following User Stories have been broken down into more detail following an Agile Workflow approach with the aid of GitHub **Projects**. A User Story template was created allowing for me to manage the user stories and add them to a precise workflow.
+Below are a list of user stories that are very basic and cover a lot of the user and admin needs for PCR. The following User Stories have been broken down into more detail following an Agile Workflow approach with the aid of GitHub **Projects**. A User Story template was created allowing for me to manage the user stories and add them to a precise workflow with some automation.
 
 #### As a Site User:
-
-Maybe just link to GitHub Project...
 
 1. I want to be able to understand the functionality of the application so I can decide if what the application offers is something I want.
 2. I want to feel welcomed and find the site easy to navigate and view so that as a junior developer I don't feel out of depth.
 3. I want to be able to sign up so that I can have my own profile and submit work for review and review other site users work.
 4. I want to be able to post a project for review so that I can get a better understanding of my application.
 5. I want to be able to easily submit a project for review so that I can do it quickly and efficiently.
+6. I want to be able to like and unlike content.
 
 #### As a Reviewer:
 
-1.
-2.
-3.
+1. I want to be able to post a review on someones post.
+2. I want to be able to edit my post after I have created it.
+3. I want to be able to delete my post incase I'm no longer happy with it.
 
 #### As a site admin:
 
-1.
-2.
-3.
+1. I wan't to be able to edit user posted content from within the app. 
+2. I wan't to be able to delete user posted content from within the app
+3. I wan't to be able to navigate the Admin Panel with ease. 
 
-will include user stories here.
+## Strategy
+
+Create an interactive and responsive app that allows for flawless utilisation for CRUD(Create, Read, Update & Delete) functionality. Users will be able to view content, but to interact fully they will need to sign up and be logged in. Code will be written in a way that allows for easy readability and future updates.
+
+### Project Goals
+ - Provide clear and simple data for users.
+ - Constantly upgrade and progress the functionality of the app.
+ - Allow for users to register
+ - Allow for users to create, read, update & delete content. 
 
 ## Scope
 
+As it stands PCR has an almost never ending scope and with this I predict there will be multiple iterations. For our intial release we will be focusing on getting an MVP(minimum viable product) to market, once the App is functioning we can start working on separate branches whilst not effecting the current live iteration. 
+
+The first release(MVP) of PCR will be defined by the following features:
+
+   - User authentication (sign up, log in, sign out)
+   - Create Posts - Update & Delete
+   - Create Reviews - Update & Delete
+   - Bland yet effective styling.
+   - All Links functional
+   - CRUD functionality available on all content.
+   - Ability to post code snippits.
+
+Future releases of PCR may include the following:
+
+   - Custom user model for profile customization. 
+   - Search bar for users to search through content.
+   - Review up/down vote system
+   - User score, (posts+reviews+likes)
+
 ## Structure
+
+The structure of the application focuses mainly on the content that will be displayed, simple yet clean and clear. A very minimalistic design will be implimented on all pages, base.html will carry 90% on the page styling with the individual view templates just referring to a content section on the page. 
+
+- Header
+
+   - Logo (links back to homapage)
+   - Desktop navigation
+   - Mobile navigation for smaller devices. 
+
+- Messages
+
+   - Display success messages
+   - display content to user upon actions.
+
+- Main
+
+   - This is the block content so all other pages will be styled inside here.
+
+- Footer
+
+   - Links to socials
+   - small site navigation. 
+
 
 ## Skeleton
 
@@ -97,11 +145,29 @@ For PCR two fonts have been used [Robot](https://fonts.google.com/specimen/Robot
 
 A very basic, yet refreshing colour palette was picked for PCR, the above colours are used frequently throughout the project with a couple other colours being called for better defined :hover objects and Yes/No butons. The colour of #ff0000(Bright RED) was used for the lick button so it would stand out a lot more.
 
+### Images
+
+With the first release of PCR we will not be supporting images, but it is something we will be looking into in the future, as it stands our only image is our Favicon which is loaded via our static files. 
+
 # Features
 
 ## Existing Features
+   
+   - User authentication (sign up, log in, sign out)
+   - Create Posts - Update & Delete
+   - Create Reviews - Update & Delete
+   - Bland yet effective styling.
+   - All Links functional
+   - CRUD functionality available on all content.
+   - Ability to post code snippits.
+
 
 ## Future Features
+
+   - Custom user model for profile customization. 
+   - Search bar for users to search through content.
+   - Review up/down vote system
+   - User score, (posts+reviews+likes)
 
 # Technologies
 
@@ -124,11 +190,6 @@ A very basic, yet refreshing colour palette was picked for PCR, the above colour
 - Heroku
 
 # Testing
-
-
-
-
-
 
 ## Tests
 
