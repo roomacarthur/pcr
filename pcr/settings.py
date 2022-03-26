@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'posts',
     # Third Party
     'crispy_forms',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -162,6 +163,20 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+CKEDITOR_CONFIGS = {
+    "default": {
+        "height": 300,
+        "width": "auto",
+        "toolbar": "Custom",
+        "toolbar_Custom": (
+            ["Bold", "Italic", "Underline", "CodeSnippet"],
+            ["NumberedList", "Outdent", "Indent"],
+            ["Smiley",]
+        ),
+        "extraPlugins": "codesnippet",
+    }
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
