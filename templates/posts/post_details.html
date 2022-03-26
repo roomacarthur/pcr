@@ -24,7 +24,7 @@
             <em>Last edited: {{ post.updated_on }}</em>
         </p>
     </div>
-    {% if user.id == post.author.id %}
+    {% if user.id == post.author.id or user.is_superuser %}
     <div class="modification">
         <a href="{% url 'edit-post' post.slug %}">Edit</a>
         <a href="{% url 'delete-post' post.slug %}">Delete</a>
@@ -81,10 +81,9 @@
 </div>
 {% endfor %}
 <div class="container reviews add-reviews reviews-container">
-    {% if user.is_authenticated or user.is_superuser%}
-        <form method="POST">
+    {% if user.is_authenticated %}
+        <form method="post">
             {% csrf_token %}
-            {{ form.media }}
             {{ review_form | crispy }}
             <button class="btn submit-btn" type="submit">Post</button>
         </form>
