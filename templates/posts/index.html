@@ -25,16 +25,18 @@ Posts
   <a class="post-link" href="{% url 'post-details' post.slug %}">
     <h3>{{ post.title }}</h3>
     <div class="post-content">
-        <ul>
-            <li class="post-author"><h4>{{ post.author }}</h4></li>
-            <li class="post-date"><em>{{ post.created_on }}</em></li>
-            <!--Total Post Review count-->
-            {% with post.reviews.count as total_reviews %}
-            <li class="reviews-count">{{ total_reviews}}<i class="data fa-solid fa-comment"></i>
-            </li>
-            {% endwith %}
-            <li class="post-likes">{{ post.likes.count }} <i class="fa-solid fa-heart"></i></li>
-        <ul>
+      <ul>
+        <li class="post-author"><h4>{{ post.author }}</h4></li>
+        <li class="post-date"><em>{{ post.created_on }}</em></li>
+        <!--Total Post Review count-->
+        {% with post.reviews.count as total_reviews %}
+        <div class="post-list-data">
+        <li class="reviews-count reviews-count-list">{{ total_reviews}}<i class="data fa-solid fa-comment"></i>
+          </li>
+          {% endwith %}
+          <li class="post-likes">{{ post.likes.count }} <i class="fa-solid fa-heart"></i></li>
+        </div>
+      <ul>
     </div> 
   </a>
 </div>

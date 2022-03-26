@@ -239,10 +239,23 @@ header a:hover {
   font-size: 14px;
   text-transform: lowercase;
 }
+.reviews-count-list{
+  display:flex;
+  float: right;
+}
 .post-likes {
   color: #d50303;
   display:flex;
   float:right;
+}
+.post-list-data{
+  display:flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-size: 16px;
+}
+.post-list-data>li{
+  padding: 0 5px;
 }
 .post-content-edit {
   font-size: 10px;
