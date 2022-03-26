@@ -289,6 +289,9 @@ header a {
   width: 100%;
   text-align: center;
 }
+textarea{
+  padding: 5px;
+}
 /*--------------------- Form styling */
 .allauth > h1 {
   margin-bottom: 10px;
@@ -412,6 +415,12 @@ form{
 .textinput, .urlinput {
   margin: 5px;
 }
+.review-login{
+  margin: 0 auto;
+  background-color: var(--blue);
+  color: #fff;
+  text-decoration: none;
+}
 /*--------------------- poste detail styling */
 
 .reviews{
@@ -428,6 +437,7 @@ form{
   color: var(--lightgrey)
 }
 .review-content > .post-edit {
+  margin-top: 10px;
   font-size: 10px;
 }
 .review-vote{
@@ -523,10 +533,10 @@ footer > h2, h6 {
   .post, .reviews-container {
     width: 50%
   }
-  .textarea{
+  .textarea, .review-content{
     width: 100%;
   }
-  .post-content{
+  .post-content, .review-content{
     max-width: none;
   }
 }
