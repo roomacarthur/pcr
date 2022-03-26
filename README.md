@@ -180,6 +180,18 @@ A very basic, yet refreshing colour palette was picked for PCR, the above colour
 
 ## Bugs & Fixes
 
+1. Success message not working for PostDelete(DeleteView). 
+   - FIX: The stock CBV success message doesn't seem to work for DeleteViews. The fix was to get the objects data and then pass that through to format the string with the objects dictionary. Help from a Stack Overflow post. [Credit](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown)
+
+2. Content past through the rich text editor was displaying raw HTML data in the view. 
+   - FIX: Passing the "| safe" tag into the view is allowing for the rich text to bew rendered. 
+
+3. Major Databse Conflicts in early Development, preventing from any data to be passed back and forth. 
+   - FIX: running "python manage.py migrate 'app' zero" Deleting all entries into /migrations apart from the __ init __ file and resetting the database in heroku, wiping the Database of all data fixed the issue. 
+
+4. When completing the New Post form, the slug field was not being auto populated. 
+   - FIX: With help from [Here](https://stackoverflow.com/questions/63053210/changing-id-field-to-slug-field-in-django) A save function was added to the model, to use slugify to post the new slug to the model upon form completion.
+
 # Deployment
 
 This project will be deployed to [Heroku](https://heroku.com) using the following outlined steps:
