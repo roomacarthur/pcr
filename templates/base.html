@@ -11,6 +11,10 @@
       src="https://kit.fontawesome.com/51b9956ef3.js"
       crossorigin="anonymous"
     ></script>
+    <!--Highlight js-->
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
     <!-- Static CSS -->
@@ -27,15 +31,15 @@
       </a></div>
       <nav id="nav-bar">
         <ul>
-          <li><a href="{% url 'homepage'%}">Home</a></li>
-          <li><a href="{% url 'about-page'%}">About</a></li>
-          <li><a href="{% url 'help-page'%}">Help</a></li>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="{% url 'about-page' %}">About</a></li>
+          <li><a href="{% url 'help-page' %}">Help</a></li>
           {% if user.is_authenticated %}
-          <li><a class="create-btn" href="{% url 'new-post'%}"><i class="fa-solid fa-plus"></i></a></li>
-          <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
+          <li><a class="create-btn" href="{% url 'new-post' %}"><i class="fa-solid fa-plus"></i></a></li>
+          <li><a class="btn logout" href="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
-          <li><a class="btn login-btn" href="{% url 'account_login'%}">Login</a></li>
-          <li><a class="btn signup-btn" href="{% url 'account_signup'%}">Sign Up</a></li>
+          <li><a class="btn login-btn" href="{% url 'account_login' %}">Login</a></li>
+          <li><a class="btn signup-btn" href="{% url 'account_signup' %}">Sign Up</a></li>
           {% endif%}
         </ul>
       </nav>
@@ -44,15 +48,15 @@
         <div class="bar bar2"></div>
         <div class="bar bar3"></div>
         <ul class="mobile-nav">
-          <li><a href="{% url 'homepage'%}">Home</a></li>
-          <li><a href="{% url 'about-page'%}">About</a></li>
-          <li><a href="{% url 'help-page'%}">Help</a></li>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="{% url 'about-page' %}">About</a></li>
+          <li><a href="{% url 'help-page' %}">Help</a></li>
           {% if user.is_authenticated %}
-          <li><a class="create-btn" href="{% url 'new-post'%}"><i class="fa-solid fa-plus"></i></a></li>
-          <li><a class="btn logout" href="{% url 'account_logout'%}">Logout</a></li>
+          <li><a class="create-btn" href="{% url 'new-post' %}"><i class="fa-solid fa-plus"></i></a></li>
+          <li><a class="btn logout" href="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
-          <li><a class="btn login-btn" href="{% url 'account_login'%}">Login</a></li>
-          <li><a class="btn signup-btn" href="{% url 'account_signup'%}">Sign Up</a></li>
+          <li><a class="btn login-btn" href="{% url 'account_login' %}">Login</a></li>
+          <li><a class="btn signup-btn" href="{% url 'account_signup' %}">Sign Up</a></li>
           {% endif%}
         </ul>
       </div>
@@ -61,7 +65,13 @@
     <!-- Body -->
  
     <section id="main">
-      
+      {% if messages %}
+        <div class="container">
+          {% for message in messages %}
+            <div class="message">{{message}}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
       {% block content %}
       <!-- Main page content goes here. -->
       {% endblock content%}
@@ -78,7 +88,6 @@
       <div class="footer-links">
         <ul>
           <li><a href="{% url 'homepage'%}">Home</a></li>
-          <li><a href="{% url 'all-posts'%}">All Posts</a></li>
           <li><a href="{% url 'about-page'%}">About</a></li>
           <li><a href="{% url 'help-page'%}">Help</a></li>
         </ul>
@@ -133,5 +142,6 @@
       </div>
     </footer>
     <script src="{% static 'js/script.js' %}"></script>
+    <script>hljs.highlightAll();</script>
   </body>
 </html>
