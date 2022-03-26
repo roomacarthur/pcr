@@ -178,7 +178,7 @@ A very basic, yet refreshing colour palette was picked for PCR, the above colour
 
 ### Google Chrome Lighthouse Tests
 
-Lightouse testing was completed in a fresh incognito Google Chrome window. 
+Lighthouse testing was completed in a fresh incognito Google Chrome window. 
 
 Desktop:
 
@@ -191,6 +191,8 @@ Mobile:
    - [Mobile Landing](https://github.com/roomacarthur/pcr/blob/main/documentation/images/lighthouse/mobile/mobile_landing.png)
    - [Mobile Post Detail](https://github.com/roomacarthur/pcr/blob/main/documentation/images/lighthouse/mobile/mobile_postdetail.png)
    - [Mobile Update](https://github.com/roomacarthur/pcr/blob/main/documentation/images/lighthouse/mobile/mobile_update.png)
+
+All results from Lighthouse tests where great, with nearly all results finishing in the perfect category. 
 
 ## Bugs & Fixes
 
