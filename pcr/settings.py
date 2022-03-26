@@ -160,9 +160,9 @@ USE_TZ = True
 # All static files are handled with whitenoise.
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 STATIC_ROOT = BASE_DIR / "static"
 
 # Custom configs for CKeditor, control the style and look of the Rich Text Editor. 
