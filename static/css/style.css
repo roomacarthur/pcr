@@ -225,6 +225,7 @@ header a {
 .post-data{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .post-data > div {
   margin: 0 10px;
@@ -252,6 +253,36 @@ header a {
 }
 .likes-count{
   color:#ff0000;
+}
+.modification{
+  display:flex;
+  flex-direction: row-reverse;
+}
+.modification > a {
+  padding: 5px;
+  text-decoration: underline;
+  color: var(--lightgrey);
+  cursor: pointer;
+  font-size: 12px;;
+}
+.no-comments > h2 {
+  text-align: center;
+  text-transform: none;
+  color: var(--text);
+}
+.likes-button{
+  all: unset;
+  cursor: pointer;
+}
+.votes-button{
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.django-ckeditor-widget{
+  width: 100%;
 }
 /*--------------------- Allauth styling */
 .allauth > h1 {
@@ -350,6 +381,9 @@ form{
   justify-content: space-between;
   align-items: center;
 }
+.review-content{
+  width: 100%;
+}
 .review-content > .post-date{
   color: var(--lightgrey)
 }
@@ -445,7 +479,7 @@ footer > h2, h6 {
     justify-content: center;
     align-items: center;
   }
-  .post, .reviews {
+  .post, .reviews-container {
     width: 50%
   }
   .textarea{
