@@ -1,17 +1,17 @@
 {% extends "../base.html" %}
 {% block head_title %}
-Edit: {{ post.title }}
+Edit Review
 {% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
 
 <div class="container">
     {% if user.is_authenticated %}
-        <h1>Create a New Post: </h1>
+        <h1>Edit your Review: </h1>
         <form method="post">
-            {% csrf_token %}
             {{ form.media }}
             {{ form | crispy }}
+            {% csrf_token %}
             <button class="submit-btn btn"type="submit">Post</button>
         </form>
     {% endif %}
