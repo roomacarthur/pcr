@@ -59,6 +59,13 @@
         <p class="post-content"> {{ review.body | safe }} </p>
         <p class="post-date post-edit"><em> EDITED: {{ review.updated_on }}</em></p>
     </div>
+    </div>
+    {% if user.username == review.name or user.is_superuser %}
+    <div class="modification">
+        <a href="{% url 'edit-review' review.pk %}">Edit</a>
+        <a href="{% url 'delete-review' review.pk %}">Delete</a>
+    </div>
+    {% endif %}
     <div class="review-vote">
         <div class="post-data">
             <div>
@@ -71,17 +78,10 @@
             </div>
         </div>
     </div>
-    </div>
-    {% if user.username == review.name %}
-    <div class="modification">
-        <a href="{% url 'edit-review' review.pk %}">Edit</a>
-        <a href="{% url 'delete-review' review.pk %}">Delete</a>
-    </div>
-    {% endif %}
 </div>
 {% endfor %}
 <div class="container reviews add-reviews reviews-container">
-    {% if user.is_authenticated %}
+    {% if user.is_authenticated or user.is_superuser%}
         <form method="POST">
             {% csrf_token %}
             {{ form.media }}
