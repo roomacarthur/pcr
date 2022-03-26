@@ -78,6 +78,13 @@ Desktop:
 - Detail View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_detail.png)
 - Navigation - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_auth.png)
 
+### Database
+
+For the PCR application a relational databse was designed, to save both the Post and Review data. Both models are designed to optimise CRUD functionality. As the application will be deployed via heroku, the deployment will be done very early in development. Deploying early will mean we can access the [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql) Database and avoid any issues later in development moving from Djangos built in SQL database to the heroku one. Below is the tamplate I will be using to build the models, the RichTextEdit fields will allow for a rich text editor from [CKEditor](https://ckeditor.com/) which inturn will allow for code snippets. 
+
+![Database model template](https://github.com/roomacarthur/pcr/blob/main/documentation/images/model_template.png)
+
+
 ## Surface
 
 ### Typography
