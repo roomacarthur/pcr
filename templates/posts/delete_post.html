@@ -4,6 +4,7 @@ Delete: {{ post.title }}
 {% endblock %}
 {% block content %}
 <div class="container">
+    <!--Prompt the user for confirmation when deleting post entry-->
     <form method="POST" action=".">
         {% csrf_token %}
         <h1>Are you sure you want to delete: {{ post.title }}</h1>
