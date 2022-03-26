@@ -57,7 +57,26 @@ will include user stories here.
 
 ## Skeleton
 
-wireframes will be here.
+### Wireframes
+
+As with all my CSS work I opt for a mobile first approach, the initial planning behind the wireframes for PCR was to make the mobile layout easily adapt to larger screens, meaning the design is only done for mobile and desktop and the application is fully responsive in all screen sizes. Below are the mobile and desktop wireframes. 
+
+Mobile:
+
+Landing View - [Here]()
+Update View -  [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobiel_editview.png)
+Generic View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobiel_generic.png)
+Detail View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_detailview.png)
+IsAuth Menu - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_authmenu.png)
+noAuth Menu - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_noauthmenu.png)
+
+Desktop:
+
+Landing View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_landing.png)
+Update View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_update.png)
+Generic View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_generic.png)
+Detail View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_detail.png)
+Navigation - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_auth.png)
 
 ## Surface
 
