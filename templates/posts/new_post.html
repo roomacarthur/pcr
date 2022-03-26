@@ -3,15 +3,16 @@
 Create Post
 {% endblock %}
 {% block content %}
-
 <div class="container">
+    <!-- if user is authenticated, display PostForm-->
     {% if user.is_authenticated %}
         <h1>Create a New Post: </h1>
         <form class="new-post-form" method="post">
-        {% csrf_token %}
-        {{ form.media}}
-        {{ form.as_p }}
-        <button class="submit-btn btn"type="submit">Post</button>
+            {% csrf_token %}
+            <!--CKEditor tag-->
+            {{ form.media}}
+            {{ form.as_p }}
+            <button class="submit-btn btn"type="submit">Post</button>
         </form>
     {% endif %}
 </div>
