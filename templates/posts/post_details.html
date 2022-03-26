@@ -8,8 +8,10 @@
 
 <div class="container post">
     <h3 class="postdetail-title">{{ post.title }}</h3>
+    <hr>
     <h4 class="postdetail-author">{{ post.author }}</h4>
     <p class="post-date">{{ post.created_on }}</p>
+    <hr>
     <div class="post-content">
         <p> {{ post.content | safe }}</P>
         <div class="post-links">
@@ -23,6 +25,7 @@
         <p class="post-content-edit">
             <em>Last edited: {{ post.updated_on }}</em>
         </p>
+        <hr>
     </div>
     {% if user.id == post.author.id or user.is_superuser %}
     <div class="modification">
