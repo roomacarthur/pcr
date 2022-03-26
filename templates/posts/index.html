@@ -5,7 +5,7 @@ Posts
 {% block content %}
 <div class="container all-posts-header">
   <h2>All posts</h2>
-
+  <!--if user is authenticated navigate to new-post url if not, log in.-->
   <a href="
   {% if user.is_authenticated %}
   {% url 'new-post'%}
@@ -13,41 +13,25 @@ Posts
   {% url 'account_login'%}
   {% endif %}
   ">
-  <div class="btn create-post"><i class="fa-solid fa-plus"></i> New Post</div>
+    <div class="btn create-post">
+      <i class="fa-solid fa-plus"></i> 
+      New Post
+    </div>
   </a>
 </div>
+<!--Render posts from database and display them in a list view.-->
 {% for post in post_list %}
-  <div class="container post">
-    <a class="post-link" href="{% url 'post-details' post.slug %}">
-      <h3>{{ post.title }}</h3>
-      <div class="post-content">
-          <ul>
-              <li class="post-author"><h4>{{ post.author }}</h4></li>
-              <li class="post-date"><em>{{ post.created_on }}</em></li>
-              <li class="post-likes">{{ post.likes.count }} <i class="fa-solid fa-heart"></i></li>
-          <ul>
-      </div> 
-    </a>
-  </div>
-  {% if is_paginated %}
-  <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-      {% if page_obj.has_previous %}
-      <li>
-        <a href="?page={{ page_obj.previous_page_number }}" class="page-link"
-          >&laquo; PREV
-        </a>
-      </li>
-      {% endif %}
-      {% if page_obj.has_next %}
-      <li>
-        <a href="?page={{ page_obj.next_page_number }}" class="page-link">
-          NEXT &raquo;</a
-        >
-      </li>
-      {% endif %}
-    </ul>
-  </nav>
-  {% endif %}
+<div class="container post">
+  <a class="post-link" href="{% url 'post-details' post.slug %}">
+    <h3>{{ post.title }}</h3>
+    <div class="post-content">
+        <ul>
+            <li class="post-author"><h4>{{ post.author }}</h4></li>
+            <li class="post-date"><em>{{ post.created_on }}</em></li>
+            <li class="post-likes">{{ post.likes.count }} <i class="fa-solid fa-heart"></i></li>
+        <ul>
+    </div> 
+  </a>
+</div>
 {% endfor %}
 {%endblock%}
