@@ -31,7 +31,7 @@ Posts
         <!--Total Post Review count-->
         {% with post.reviews.count as total_reviews %}
         <div class="post-list-data">
-        <li class="reviews-count reviews-count-list">{{ total_reviews}}<i class="data fa-solid fa-comment"></i>
+        <li class="reviews-count reviews-count-list">{{ total_reviews}} <i class="data fa-solid fa-comment"></i>
           </li>
           {% endwith %}
           <li class="post-likes">{{ post.likes.count }} <i class="fa-solid fa-heart"></i></li>
