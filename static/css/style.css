@@ -154,15 +154,17 @@ header a {
 }
 /*--------------------- Main content Styling */
 #main {
-  /* display: grid; */
+  display: flex;
   grid-column: 2/3;
   z-index:1;
+  align-items: center;
+  flex-direction: column;
 }
 .container {
   height: auto;
   width: 90%;
   padding: 10px;
-  margin: 15px auto;
+  margin: 10px 0;
   text-decoration: none;
   background-color: #fff;
   border-radius: 10px;
