@@ -63,7 +63,7 @@ As with all my CSS work I opt for a mobile first approach, the initial planning 
 
 Mobile:
 
-Landing View - [Here]()
+Landing View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_landing.png)
 Update View -  [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobiel_editview.png)
 Generic View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobiel_generic.png)
 Detail View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_detailview.png)
@@ -80,8 +80,11 @@ Navigation - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/
 
 ## Surface
 
-colours, Typography,
+### Typography
 
+For PCR two fonts have been used [Robot](https://fonts.google.com/specimen/Roboto) and [Lato](https://fonts.google.com/specimen/Lato?query=lato), both from Google Fonts, They both use Sans Serif as a backup font. 
+
+###
 # Features
 
 ## Existing Features
