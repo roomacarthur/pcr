@@ -1,32 +1,11 @@
 # Peer Code Review
+![PCR Banner]()
 
+The Live Site can be viewed on [Heroku](https://pcr-roo.herokuapp.com/)
 ## intro
 
 PCR is a social space for users to request code/project reviews and review other peoples projects.
 
-# Table of Contents:
-
-1. [Overview](#overview)
-2. [User Experience(UX)](#user-experience-UX)
-   1. [Target Audience](#target-audience)
-   2. [Strategy](#strategy)
-   3. [Scope](#scope)
-   4. [Structure](#structure)
-   5. [Skeleton](#skeleton)
-      1. [Wireframes](#wireframes)
-   6. [Surface](#surface)
-      1. [Colours](#colours)
-      2. [Typography](#typography)
-      3. [Images & Icons](#images-&-icons)
-3. [Features](#features)
-   1. [Existing Features](#existing-features)
-   2. [Future Features](#future-features)
-4. [Technologies](#technologies)
-5. [Testing](#testing)
-   1. [Tests](#tests)
-   2. [Bugs & Fixes](#bugs-&-fixes)
-6. [Deployment](#deployment)
-7. [Credits](#credits)
 
 # Overview
 
@@ -166,7 +145,7 @@ colours, Typography,
 
    PASS
 
-   
+
 
 ## Bugs & Fixes
 
