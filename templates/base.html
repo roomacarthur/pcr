@@ -31,8 +31,8 @@
     <!-- Navigation -->
     <header>
       <div id="logo">
-      <a href="{% url 'homepage'%}">
-        Peer Code Reviews
+      <a href="{% url 'homepage'%}"><h1>
+        Peer Code Reviews</h1>
       </a></div>
       <nav id="nav-bar">
         <ul>
@@ -40,7 +40,7 @@
           <li><a href="{% url 'about-page' %}">About</a></li>
           <li><a href="{% url 'help-page' %}">Help</a></li>
           {% if user.is_authenticated %}
-          <li><a class="create-btn" href="{% url 'new-post' %}"><i class="fa-solid fa-plus"></i></a></li>
+          <li><a class="create-btn" href="{% url 'new-post' %}"><i class="fa-solid fa-plus"></i> Create</a></li>
           <li><a class="btn logout" href="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
           <li><a class="btn login-btn" href="{% url 'account_login' %}">Login</a></li>

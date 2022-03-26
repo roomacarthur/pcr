@@ -10,6 +10,7 @@
   --text: #566573;
   --bold: #212f3d;
   --lightgrey: #707070;
+  --darkhover: rgb(26, 185, 191);
 }
 
 /*--------------------- Boilerplate CSS */
@@ -57,11 +58,19 @@ header a {
   text-decoration: none;
   color: #fff;
 }
-#logo {
+#logo>a>h1 {
   display: flex;
   align-items: center;
   font-size: 30px;
   font-weight: 700;
+  color: #fff;
+}
+#logo>a>h1:hover{
+  color: var(--darkhover);
+}
+header a:hover {
+  color: var(--darkhover);
+  transition: 0.3s;
 }
 #nav-bar > ul {
   list-style: none;
@@ -91,7 +100,7 @@ header a {
   cursor: pointer;
 }
 .delete{
-  background-color: #ff0000;
+  background-color: #d50303;
   color: #fff;
   font-size: 24px;
   width: 90px;
@@ -172,7 +181,7 @@ header a {
   box-shadow: 5px 10px 20px 3px rgba(0, 0, 0, 0.1);
 }
 .green{
-  background-color:#578257;
+  background-color:#426142;
   color: #fff;
   font-size: 18px;
   text-align: center;
@@ -190,9 +199,18 @@ header a {
   font-weight: 400;
   padding: 10px;
 }
+.create-post:hover{
+  color: var(--darkhover);
+}
 .post{
   display: flex;
   flex-direction: column;
+}
+.post:hover{
+  -webkit-box-shadow: 5px 10px 20px 3px rgba(26, 10, 10, 0.5);
+  box-shadow: 5px 10px 20px 3px rgba(26, 10, 10, 0.5);
+  transition: 0.3s;
+  transform: scale(1.05);
 }
 .post-link {
   text-decoration: none;
@@ -222,7 +240,7 @@ header a {
   text-transform: lowercase;
 }
 .post-likes {
-  color: #ff0000;
+  color: #d50303;
   display:flex;
   float:right;
 }
@@ -254,11 +272,15 @@ header a {
   font-size: 32px;
   margin: 20px 10px;
 }
+.postdetail-link:hover{
+  transform: scale(1.5);
+  transition: 0.3s;
+}
 .reviews-count{
   color: var(--text);
 }
 .likes-count{
-  color:#ff0000;
+  color: #d50303;
 }
 .modification{
   display:flex;
@@ -270,6 +292,9 @@ header a {
   color: var(--lightgrey);
   cursor: pointer;
   font-size: 12px;;
+}
+.modification > a:hover{
+  color: var(--blue);
 }
 .no-comments > h2 {
   text-align: center;
@@ -350,7 +375,7 @@ textarea{
   color: #008000;
 }
 .no{
-  color: #ff0000;
+  color: #d50303;
 }
 /* allauth buttons buttons */
 .primaryAction {
@@ -401,6 +426,9 @@ textarea{
   padding: 10px;
   text-transform: uppercase;
   margin: 0 auto;
+}
+.submit-btn:hover{
+  color: var(--darkhover);
 }
 form{
   width: 100%;
@@ -489,7 +517,8 @@ footer > p {
 }
 .footer-socials > ul > li > a:hover,
 .footer-links > ul > li > a:hover {
-  color: var(--blue);
+  color: var(--darkhover);
+  transition: 0.3s;
 }
 .footer-socials > ul > li,
 .footer-links > ul > li {
