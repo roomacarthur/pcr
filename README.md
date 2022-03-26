@@ -163,4 +163,17 @@ Within my local files my Environmental Variables are set within a env.py file, t
 
 # Credits
 
-extra notes:
+Help with Class Based Views
+- https://ccbv.co.uk/
+
+Help with login_required method. 
+- https://steemit.com/utopian-io/@duski.harahap/create-a-forum-application-using-django-6-crud-system-and-url-protection-redirect-system
+Success message not working in UpdateView.
+   note: Bizarre issue as normal success_message worked in DeleteView.
+- https://stackoverflow.com/questions/39999956/django-how-to-send-a-success-message-using-a-updateview-cbv
+
+- PostDetail view.
+   help from CI walkthrough project: 
+
+Rich Text Field from CKEditor
+- https://ckeditor.com/docs/ckeditor4/latest/index.html
