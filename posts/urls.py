@@ -10,8 +10,12 @@ urlpatterns = [
     path('<slug:slug>/', views.PostDetail.as_view(), name="post-details"),
     path('<str:slug>/edit/', views.PostEdit.as_view(), name="edit-post"),
     path('<str:slug>/delete/', views.PostDelete.as_view(), name="delete-post"),
-    path('<int:pk>/delete-review/', views.ReviewDelete.as_view(), name="delete-review"),
-    path('edit-review/<int:pk>', views.ReviewEdit.as_view(), name="edit-review"),
+    path(
+        '<int:pk>/delete-review/',
+        views.ReviewDelete.as_view(), name="delete-review"),
+    path(
+        'edit-review/<int:pk>',
+        views.ReviewEdit.as_view(), name="edit-review"),
     path('like/<str:pk>/', views.LikeView, name="like-post"),
     path('vote/<str:pk>/', views.ReviewLikeView, name="like-review"),
 ]
