@@ -11,7 +11,7 @@
     <h4 class="postdetail-author">{{ post.author }}</h4>
     <p class="post-date">{{ post.created_on }}</p>
     <div class="post-content">
-        <p> {{ post.content }}</P>
+        <p> {{ post.content | safe }}</P>
         <div class="post-links">
             <a class="postdetail-link" href="{{ post.repo_link }}" target="_blank">
                 <i class="fa-brands fa-github"></i>
@@ -24,11 +24,20 @@
             <em>Last edited: {{ post.updated_on }}</em>
         </p>
     </div>
+    {% if user.id == post.author.id %}
+    <div class="modification">
+        <a href="{% url 'edit-post' post.slug %}">Edit</a>
+        <a href="{% url 'delete-post' post.slug %}">Delete</a>
+    </div>
+    {% endif %}
 
     <div class="post-data">
         <div>
             <span class="likes-count">
-            {{ post.likes.count }} <i class="data fa-solid fa-heart"></i>
+                <form method="POST" action="{% url 'like-post' post.slug %}">
+                    {% csrf_token %}
+                    <button class="likes-button" type="submit" name="post_id" value="{{ post.id }}">{{ post.likes.count }} <i class="data fa-solid fa-heart"></i></button>
+                </form>
             </span>
         </div>
         {% with reviews.count as total_reviews %}
@@ -38,27 +47,45 @@
         </div>
         {% endwith %}
     </div>
+
 </div>
+
 {% for review in reviews %}
-<div class="container reviews">
+<div class="container reviews-container">
+    <div class="reviews">
     <div class="review-content">
         <h4>{{ review.name }}</h4>
         <p class="post-date"> {{ review.created_on }}</p>
-        <p class="post-content"> {{ review.body }} </p>
+        <p class="post-content"> {{ review.body | safe }} </p>
         <p class="post-date post-edit"><em> EDITED: {{ review.updated_on }}</em></p>
     </div>
     <div class="review-vote">
-        <div><i class="fa-solid fa-angle-up"></i></div>
-        <div>{{ review.votes.count }}</div>
-        <div><i class="fa-solid fa-angle-down"></i></div>
+        <div class="post-data">
+            <div>
+                <span class="likes-count">
+                    <form method="POST" action="{% url 'like-review' post.slug %}">
+                        {% csrf_token %}
+                        <button class="votes-button" type="submit" name="review_id" value="{{ review.id }}"><i class="data fa-solid fa-heart"></i>{{ review.votes.count }}</button>
+                    </form>
+                </span>
+            </div>
+        </div>
     </div>
+    </div>
+    {% if user.username == review.name %}
+    <div class="modification">
+        <a href="{% url 'edit-review' review.pk %}">Edit</a>
+        <a href="{% url 'delete-review' review.pk %}">Delete</a>
+    </div>
+    {% endif %}
 </div>
 {% endfor %}
-<div class="container reviews add-reviews">
+<div class="container reviews add-reviews reviews-container">
     {% if user.is_authenticated %}
-        <form method="post">
-            {{ review_form | crispy }}
+        <form method="POST">
             {% csrf_token %}
+            {{ form.media }}
+            {{ review_form | crispy }}
             <button class="btn submit-btn" type="submit">Post</button>
         </form>
     {% else %}
