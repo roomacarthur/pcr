@@ -288,7 +288,7 @@ header a {
 .django-ckeditor-widget{
   width: 100%;
 }
-/*--------------------- Allauth styling */
+/*--------------------- Form styling */
 .allauth > h1 {
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -300,16 +300,42 @@ header a {
   list-style-type: none;
   text-decoration: underline;
 }
+.signup > p > label,.new-post-form > p > label, .reset >p>label{
+  display: none;
+}
+.signup{
+  width: 100%;
+}
 
-#id_login, #id_password, #id_email, #id_email2, #id_password1, #id_password2, #id_username{
+#id_login, #id_password, #id_email, #id_email2, #id_password1, #id_password2, #id_username, #id_title, #id_repo_link, #id_live_link{
   background-color: var(--grey);
-  margin: 5px;
-  width: 200px;
+  margin: 5px auto;
+  width: 90%;
   height: 30px;
   border-radius: 10px;
   border: none;
   padding: 15px 5px;
   font-size: 16px;
+}
+.login>p,
+.signup>p,
+.reset>p{
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.new-post-form > p {
+  width: 80%;
+  text-align: center;
+  margin: 5px 0;
+}
+.new-post-form > p > input{
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--lightgrey);
 }
 
 /* allauth buttons buttons */
@@ -400,6 +426,7 @@ form{
   flex-direction: column;
   align-items: center;
 }
+
 /*--------------------- footer styling */
 footer {
   height: 225px;

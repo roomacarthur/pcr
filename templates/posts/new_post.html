@@ -7,7 +7,7 @@ Create Post
 <div class="container">
     {% if user.is_authenticated %}
         <h1>Create a New Post: </h1>
-        <form method="post">
+        <form class="new-post-form" method="post">
         {% csrf_token %}
         {{ form.media}}
         {{ form.as_p }}
