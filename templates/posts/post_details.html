@@ -4,9 +4,8 @@
 {% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
-
-
 <div class="container post-main">
+    <!--Display post details-->
     <h3 class="postdetail-title">{{ post.title }}</h3>
     <hr>
     <h4 class="postdetail-author">{{ post.author }}</h4>
@@ -27,22 +26,28 @@
         </p>
         <hr>
     </div>
+    <!--If user is = to author or is admin access delete/edit post views-->
     {% if user.id == post.author.id or user.is_superuser %}
     <div class="modification">
         <a href="{% url 'edit-post' post.slug %}">Edit</a>
         <a href="{% url 'delete-post' post.slug %}">Delete</a>
     </div>
     {% endif %}
-
+    <!--Display post data = Number of reviews and Likes functionality-->
     <div class="post-data">
         <div>
+            <!--Likes functionality including total likes-->
             <span class="likes-count">
                 <form method="POST" action="{% url 'like-post' post.slug %}">
                     {% csrf_token %}
-                    <button class="likes-button" type="submit" name="post_id" value="{{ post.id }}">{{ post.likes.count }} <i class="data fa-solid fa-heart"></i></button>
+                    <button class="likes-button" type="submit" name="post_id" value="{{ post.id }}">
+                        {{ post.likes.count }} 
+                        <i class="data fa-solid fa-heart"></i>
+                    </button>
                 </form>
             </span>
         </div>
+        <!--Total Post Review count.-->
         {% with reviews.count as total_reviews %}
         <div class="reviews-count">
             <span class="count">{{ total_reviews}}</span>
@@ -50,9 +55,8 @@
         </div>
         {% endwith %}
     </div>
-
 </div>
-
+<!--display review details-->
 {% for review in reviews %}
 <div class="container reviews-container">
     <div class="reviews">
@@ -63,12 +67,14 @@
         <p class="post-date post-edit"><em> EDITED: {{ review.updated_on }}</em></p>
     </div>
     </div>
+    <!--If user is = to author or is admin access delete/edit review views-->
     {% if user.username == review.name or user.is_superuser %}
     <div class="modification">
         <a href="{% url 'edit-review' review.pk %}">Edit</a>
         <a href="{% url 'delete-review' review.pk %}">Delete</a>
     </div>
     {% endif %}
+    <!--Review voting functionality-->
     <div class="review-vote">
         <div class="post-data">
             <div>
@@ -83,6 +89,7 @@
     </div>
 </div>
 {% endfor %}
+<!--If user is authenticated get form for submitting a new review-->
 <div class="container reviews add-reviews reviews-container">
     {% if user.is_authenticated %}
         <form method="post">
@@ -90,6 +97,7 @@
             {{ review_form | crispy }}
             <button class="btn submit-btn" type="submit">Post</button>
         </form>
+    <!--If user is not authenticated render log in button.-->
     {% else %}
         <a class="btn login-btn review-login" href="{% url 'account_login'%}">Login to post a review</a>
     {% endif %}
