@@ -63,20 +63,20 @@ As with all my CSS work I opt for a mobile first approach, the initial planning 
 
 Mobile:
 
-Landing View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_landing.png)
-Update View -  [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobiel_editview.png)
-Generic View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobiel_generic.png)
-Detail View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_detailview.png)
-IsAuth Menu - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_authmenu.png)
-noAuth Menu - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_noauthmenu.png)
+- Landing View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_landing.png)
+- Update View -  [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobiel_editview.png)
+- Generic View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobiel_generic.png)
+- Detail View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_detailview.png)
+- IsAuth Menu - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_authmenu.png)
+- noAuth Menu - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/mobile/mobile_noauthmenu.png)
 
 Desktop:
 
-Landing View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_landing.png)
-Update View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_update.png)
-Generic View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_generic.png)
-Detail View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_detail.png)
-Navigation - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_auth.png)
+- Landing View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_landing.png)
+- Update View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_update.png)
+- Generic View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_generic.png)
+- Detail View - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_detail.png)
+- Navigation - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/images/wireframes/desktop/desktop_auth.png)
 
 ## Surface
 
@@ -87,6 +87,7 @@ For PCR two fonts have been used [Robot](https://fonts.google.com/specimen/Robot
 ### Colours
 
 ![colours](https://github.com/roomacarthur/pcr/blob/main/documentation/images/color-palette.png)
+
 A very basic, yet refreshing colour palette was picked for PCR, the above colours are used frequently throughout the project with a couple other colours being called for better defined :hover objects and Yes/No butons. The colour of #ff0000(Bright RED) was used for the lick button so it would stand out a lot more.
 
 # Features
