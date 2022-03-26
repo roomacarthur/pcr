@@ -84,7 +84,11 @@ Navigation - [Here](https://github.com/roomacarthur/pcr/blob/main/documentation/
 
 For PCR two fonts have been used [Robot](https://fonts.google.com/specimen/Roboto) and [Lato](https://fonts.google.com/specimen/Lato?query=lato), both from Google Fonts, They both use Sans Serif as a backup font. 
 
-###
+### Colours
+
+![colours](https://github.com/roomacarthur/pcr/blob/main/documentation/images/color-palette.png)
+A very basic, yet refreshing colour palette was picked for PCR, the above colours are used frequently throughout the project with a couple other colours being called for better defined :hover objects and Yes/No butons. The colour of #ff0000(Bright RED) was used for the lick button so it would stand out a lot more.
+
 # Features
 
 ## Existing Features
