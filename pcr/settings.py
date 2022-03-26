@@ -164,6 +164,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+# Custom configs for CKeditor, control the style and look of the Rich Text Editor. 
+# https://ckeditor.com/docs/ckeditor4/latest/index.html
 CKEDITOR_CONFIGS = {
     "default": {
         "height": 300,
