@@ -2,19 +2,16 @@
 ![PCR Banner](https://github.com/roomacarthur/pcr/blob/main/documentation/images/pcr_banner.png)
 
 The Live Site can be viewed on [Heroku](https://pcr-roo.herokuapp.com/)
-## intro
-
-PCR is a social space for users to request code/project reviews and review other peoples projects.
-
 
 # Overview
 
-PCR is an application built to help all developers not just juniors on their journey. The aim of the application is to allow for users to submit projects that they are currently working to be reviewed. The community is the driving force as they are the ones that will do the reviewing.
+PCR(peer code review) is an application built to help all developers not just juniors on their journey. The aim of the application is to allow for users to submit projects that they are currently working to be reviewed by other site users.
 
-People who contribute by reviewing will be acknowledged and for each positively voted review they leave they will gain a point on the Reviewer Leader board.
+Users can Create, Read, Update & Delete Posts and reviews, They can also like reviews and posts to show appreciation.
 
 PCR will be developed using **HTML, CSS, JavaScript & Python.**
-It will use a PostgreSQL database to handle the back-end of the application. The application will be deployed using Heroku.
+
+As the site will be deployed via heroku It will use the Heroku Postgres Database and this will be implemented from the very beginning of development as the project will be deployed instantly to keep on top of potential issues. 
 
 # User Experience
 
