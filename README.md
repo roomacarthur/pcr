@@ -161,7 +161,6 @@ With the first release of PCR we will not be supporting images, but it is someth
    - CRUD functionality available on all content.
    - Ability to post code snippits.
 
-
 ## Future Features
 
    - Custom user model for profile customization. 
@@ -180,14 +179,43 @@ With the first release of PCR we will not be supporting images, but it is someth
 - Python
 - JavaScript
 - jQuery
-
-- Django
-- Django-allauth
-- Gunicorn
-- Psycopg2
-- dj_database_url
-
 - Heroku
+
+When working on pyhton projects I work within a virtual env and track all my packages in a requirements.txt file. 
+
+Below is a list of all the python packages used for PCR:
+- asgiref==3.5.0
+- bleach==4.1.0
+- certifi==2021.10.8
+- cffi==1.15.0
+- charset-normalizer==2.0.12
+- cryptography==36.0.1
+- defusedxml==0.7.1
+- dj-database-url==0.5.0
+- Django==3.2.12
+- django-allauth==0.49.0
+- django-ckeditor==6.2.0
+- django-crispy-forms==1.14.0
+- django-js-asset==2.0.0
+- gunicorn==20.1.0
+- idna==3.3
+- oauthlib==3.2.0
+- packaging==21.3
+- psycopg2==2.9.3
+- pycparser==2.21
+- PyJWT==2.3.0
+- pyparsing==3.0.7
+- python3-openid==3.2.0
+- pytz==2021.3
+- requests==2.27.1
+- requests-oauthlib==1.3.1
+- six==1.16.0
+- sqlparse==0.4.2
+- tzdata==2021.5
+- urllib3==1.26.8
+- webencodings==0.5.1
+- whitenoise==6.0.0
+
 
 # Testing
 
@@ -325,3 +353,5 @@ Success message not working in UpdateView.
 
 Rich Text Field from CKEditor
 - https://ckeditor.com/docs/ckeditor4/latest/index.html
+
+- Code Institute - Support
