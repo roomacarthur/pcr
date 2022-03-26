@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta name="description" content="Peer Code Reviews, A place for developers to learn and share! By @Roomacarthur"/>
+    <meta charset="UTF-8" />  
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- font awesome import -->
@@ -19,7 +20,7 @@
     <!--Highlight js-->
     <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}"/>
     <!-- Static CSS -->
@@ -31,23 +32,28 @@
     <!-- Navigation -->
     <header>
       <div id="logo">
-      <a href="{% url 'homepage'%}"><h1>
-        Peer Code Reviews</h1>
-      </a></div>
+        <a href="{% url 'homepage'%}">
+          <h1>Peer Code Reviews</h1>
+        </a>
+      </div>
+      <!--Desktop navigation-->
       <nav id="nav-bar">
         <ul>
           <li><a href="{% url 'homepage' %}">Home</a></li>
           <li><a href="{% url 'about-page' %}">About</a></li>
           <li><a href="{% url 'help-page' %}">Help</a></li>
+          <!--Only show if user is authenticated(logged in)-->
           {% if user.is_authenticated %}
           <li><a class="create-btn" href="{% url 'new-post' %}"><i class="fa-solid fa-plus"></i> Create</a></li>
           <li><a class="btn logout" href="{% url 'account_logout' %}">Logout</a></li>
+          <!--Only show if user is not authenticaed(logged out)-->
           {% else %}
           <li><a class="btn login-btn" href="{% url 'account_login' %}">Login</a></li>
           <li><a class="btn signup-btn" href="{% url 'account_signup' %}">Sign Up</a></li>
           {% endif%}
         </ul>
       </nav>
+      <!--Mobile navigation-->
       <div id="hamburger-icon" onclick="toggleMobileNav(this)">
         <div class="bar bar1"></div>
         <div class="bar bar2"></div>
@@ -56,32 +62,34 @@
           <li><a href="{% url 'homepage' %}">Home</a></li>
           <li><a href="{% url 'about-page' %}">About</a></li>
           <li><a href="{% url 'help-page' %}">Help</a></li>
+          <!--Only show if user is authenticated(logged in)-->
           {% if user.is_authenticated %}
           <li><a class="create-btn" href="{% url 'new-post' %}"><i class="fa-solid fa-plus"></i></a></li>
           <li><a class="btn logout" href="{% url 'account_logout' %}">Logout</a></li>
+          <!--Only show if user is not authenticaed(logged out)-->
           {% else %}
           <li><a class="btn login-btn" href="{% url 'account_login' %}">Login</a></li>
           <li><a class="btn signup-btn" href="{% url 'account_signup' %}">Sign Up</a></li>
           {% endif%}
         </ul>
       </div>
-    </div>
     </header>
     <!-- Body -->
- 
     <section id="main">
+      <!--Success Messages only Displayed if message exists-->
       {% if messages %}
-        <div class="container green">
-          {% for message in messages %}
-            <div class="message">{{message}}</div>
-          {% endfor %}
-        </div>
+      <div class="container green">
+        {% for message in messages %}
+        <div class="message">{{message}}</div>
+        {% endfor %}
+      </div>
       {% endif %}
       {% block content %}
+      <!-- ---------------------------- -->
       <!-- Main page content goes here. -->
+      <!-- ---------------------------- -->
       {% endblock content%}
     </section>
-
     <!-- Footer -->
     <footer>
       <h2>Peer Code Reviews</h2>
@@ -105,8 +113,7 @@
               target="_blank"
               rel="noopener"
               aria-label="Visit ficebook (opens in a new tab)"
-              href="https://www.facebook.com"
-            >
+              href="https://www.facebook.com">
               <i class="fa-brands fa-facebook-f"></i>
             </a>
           </li>
