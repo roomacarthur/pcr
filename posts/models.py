@@ -1,13 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
 
 # Main Post model.
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=150, unique=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post")
-    content = models.TextField()
+    content = RichTextField(blank=True, null=True)
     live_link = models.URLField(max_length=200, blank=True)
     repo_link = models.URLField(max_length=200, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -27,6 +28,7 @@ class Post(models.Model):
     def total_likes(self):
         return self.likes.count()
     
+    # Helper function to auto save the slug from title when submitting form.
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
@@ -36,7 +38,7 @@ class Post(models.Model):
 class Review(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="reviews")
     name = models.CharField(max_length=50)
-    body = models.TextField()
+    body = RichTextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     votes = models.ManyToManyField(User, related_name="Review_likes", blank=True)
