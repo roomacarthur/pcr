@@ -115,9 +115,58 @@ colours, Typography,
 
 # Testing
 
-bump
+
+
+
+
 
 ## Tests
+
+### Python tests:
+
+1. Test: Test the NewPost(CreateView) by creating a new post.
+   - Result: Successfully called the correct form, input data and successfully posted the new data to the DataBase.
+   
+   PASS
+
+2. Test: Test the PostEdit(UpdateView) by editing a post.
+   - Result: Successful get request for the stored data. Displayed in the PostForm, Edited data and a successful POST request was sent, adding the new updated data to the DataBase record.
+   
+   PASS
+
+3. Test: Test the PostDelete(DeleteView) by deleting a post.
+   - Result: Prompted with a message asking me to confirm deletion, deletion from DataBase was successful and redirected to homepage.
+
+   PASS
+
+4. Test: Test the NewReview(CreateView) by creating a new Review on a Post
+   - Result: Only one field from the form is present, Successfully posted a Review with the view fetching my username and the creation date which is displayed along with my review.
+
+   PASS
+
+5. Test: Test the ReviewDelete(DeleteView) by deleting a review.
+   - Result: Once clicking the delete button on the review, I am prompted with a screen to confirm I would like to delete the review. Upon clicking yes, I am redirected back to the original Post.
+
+   PASS
+
+6. Test: Test the ReviewEdit(UpdateView) by editing a review.
+   - Result: redirected to a template with the ReviewForm data, where I can access my database record for this review, update and submit to the database. I am then redirected back to the original post.
+
+   PASS
+
+### JavaScript
+
+1. Test: Via Chrome Dev panel, ensure that scripts are being called on all pages.
+   - Result: HighlightsJS is being called along with CDN data from the head in base.html
+
+   PASS
+
+2. Test: Check jQuery is attaching placholders for the inputs on New Post page.
+   - Result: Each field that is using jQuery to attach a placeholder is working correctly.
+
+   PASS
+
+   
 
 ## Bugs & Fixes
 
