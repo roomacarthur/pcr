@@ -15,7 +15,7 @@ def about(request):
     return render(request, 'posts/about.html')
 
 
-# all posts view, used within all_posts.html
+
 class AllPosts(generic.ListView):
     """
     Displays all current posts related to model: Post
@@ -27,11 +27,17 @@ class AllPosts(generic.ListView):
     template_name = 'posts/index.html'
 
 
-# post detail view.
-# Coded with help from Django walk through project "I Think Therefore I Blog"
-# https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/c6a89f138afe4b209ee4fa6d6f1251a3/
-class PostDetail(View):
 
+class PostDetail(View):
+    """
+    REquest data and display it within the users view, 
+    post detail view.
+    Coded with help from Django walk through project "I Think Therefore
+    I Blog"
+    https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+
+    FST101+2021_T1/courseware/b31493372e764469823578613d11036b/c6a89
+    f138afe4b209ee4fa6d6f1251a3/
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(approved=True)
         post = get_object_or_404(queryset, slug=slug)
