@@ -5,7 +5,7 @@ The Live Site can be viewed on [Heroku](https://pcr-roo.herokuapp.com/)
 
 # Overview
 
-PCR(peer code review) is an application built to help all developers not just juniors on their journey. The aim of the application is to allow for users to submit projects that they are currently working to be reviewed by other site users.
+PCR(peer code review) is an application built to help all developers, not just juniors, on their journey. The aim of the application is to allow for users to submit projects that they are currently working to be reviewed by other site users.
 
 Users can Create, Read, Update & Delete Posts and reviews, They can also like reviews and posts to show appreciation.
 
@@ -30,22 +30,22 @@ Below are a list of user stories that are very basic and cover a lot of the user
 
 1. I want to be able to understand the functionality of the application so I can decide if what the application offers is something I want.
 2. I want to feel welcomed and find the site easy to navigate and view so that as a junior developer I don't feel out of depth.
-3. I want to be able to sign up so that I can have my own profile and submit work for review and review other site users work.
+3. I want to be able to sign up so that I can have my own profile and submit work for review and review other site users' work.
 4. I want to be able to post a project for review so that I can get a better understanding of my application.
 5. I want to be able to easily submit a project for review so that I can do it quickly and efficiently.
 6. I want to be able to like and unlike content.
 
 #### As a Reviewer:
 
-1. I want to be able to post a review on someones post.
+1. I want to be able to post a review on someone's post.
 2. I want to be able to edit my post after I have created it.
-3. I want to be able to delete my post incase I'm no longer happy with it.
+3. I want to be able to delete my post in case I'm no longer happy with it.
 
 #### As a site admin:
 
-1. I wan't to be able to edit user posted content from within the app. 
-2. I wan't to be able to delete user posted content from within the app
-3. I wan't to be able to navigate the Admin Panel with ease. 
+1. I want to be able to edit user posted content from within the app. 
+2. I want to be able to delete user posted content from within the app
+3. I want to be able to navigate the Admin Panel with ease. 
 
 ## Strategy
 
@@ -59,7 +59,7 @@ Create an interactive and responsive app that allows for flawless utilisation fo
 
 ## Scope
 
-As it stands PCR has an almost never ending scope and with this I predict there will be multiple iterations. For our intial release we will be focusing on getting an MVP(minimum viable product) to market, once the App is functioning we can start working on separate branches whilst not effecting the current live iteration. 
+As it stands PCR has an almost never ending scope and with this I predict there will be multiple iterations. For our initial release we will be focusing on getting an MVP(minimum viable product) to market, once the App is functioning we can start working on separate branches whilst not affecting the current live iteration. 
 
 The first release(MVP) of PCR will be defined by the following features:
 
@@ -69,7 +69,7 @@ The first release(MVP) of PCR will be defined by the following features:
    - Bland yet effective styling.
    - All Links functional
    - CRUD functionality available on all content.
-   - Ability to post code snippits.
+   - Ability to post code snippets.
 
 Future releases of PCR may include the following:
 
@@ -80,11 +80,11 @@ Future releases of PCR may include the following:
 
 ## Structure
 
-The structure of the application focuses mainly on the content that will be displayed, simple yet clean and clear. A very minimalistic design will be implimented on all pages, base.html will carry 90% on the page styling with the individual view templates just referring to a content section on the page. 
+The structure of the application focuses mainly on the content that will be displayed, simple yet clean and clear. A very minimalistic design will be implemented on all pages, base.html will carry 90% on the page styling with the individual view templates just referring to a content section on the page. 
 
 - Header
 
-   - Logo (links back to homapage)
+   - Logo (links back to homepage)
    - Desktop navigation
    - Mobile navigation for smaller devices. 
 
@@ -128,7 +128,7 @@ Desktop:
 
 ### Database
 
-For the PCR application a relational databse was designed, to save both the Post and Review data. Both models are designed to optimise CRUD functionality. As the application will be deployed via heroku, the deployment will be done very early in development. Deploying early will mean we can access the [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql) Database and avoid any issues later in development moving from Djangos built in SQL database to the heroku one. Below is the tamplate I will be using to build the models, the RichTextEdit fields will allow for a rich text editor from [CKEditor](https://ckeditor.com/) which inturn will allow for code snippets. 
+For the PCR application a relational database was designed, to save both the Post and Review data. Both models are designed to optimise CRUD functionality. As the application will be deployed via heroku, the deployment will be done very early in development. Deploying early will mean we can access the [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql) Database and avoid any issues later in development moving from Djangos built in SQL database to the heroku one. Below is the template I will be using to build the models, the RichTextEdit fields will allow for a rich text editor from [CKEditor](https://ckeditor.com/) which inturn will allow for code snippets. 
 
 ![Database model template](https://github.com/roomacarthur/pcr/blob/main/documentation/images/model_template.png)
 
@@ -143,7 +143,7 @@ For PCR two fonts have been used [Robot](https://fonts.google.com/specimen/Robot
 
 ![colours](https://github.com/roomacarthur/pcr/blob/main/documentation/images/color-palette.png)
 
-A very basic, yet refreshing colour palette was picked for PCR, the above colours are used frequently throughout the project with a couple other colours being called for better defined :hover objects and Yes/No butons. The colour of #ff0000(Bright RED) was used for the lick button so it would stand out a lot more.
+A very basic, yet refreshing colour palette was picked for PCR, the above colours are used frequently throughout the project with a couple other colours being called for better defined :hover objects and Yes/No buttons. The colour of #ff0000(Bright RED) was used for the lick button so it would stand out a lot more.
 
 ### Visuals
 
@@ -162,7 +162,7 @@ With the first release of PCR we will not be supporting images, but it is someth
    - Bland yet effective styling.
    - All Links functional
    - CRUD functionality available on all content.
-   - Ability to post code snippits.
+   - Ability to post code snippets.
 
 ## Future Features
 
@@ -184,7 +184,7 @@ With the first release of PCR we will not be supporting images, but it is someth
 - jQuery
 - Heroku
 
-When working on pyhton projects I work within a virtual env and track all my packages in a requirements.txt file. 
+When working on python projects I work within a virtual env and track all my packages in a requirements.txt file. 
 
 Below is a list of all the python packages used for PCR and there version types.:
 - asgiref==3.5.0
@@ -196,7 +196,7 @@ Below is a list of all the python packages used for PCR and there version types.
 - defusedxml==0.7.1
 - dj-database-url==0.5.0
 - Django==3.2.12
-   - Django 3.2.12 was a specific use as there was security issues with previous 3.2 versions.
+   - Django 3.2.12 was a specific use as there were security issues with previous 3.2 versions.
 - django-allauth==0.49.0
 - django-ckeditor==6.2.0
 - django-crispy-forms==1.14.0
@@ -227,7 +227,7 @@ Below is a list of all the python packages used for PCR and there version types.
 
 ### Generic Testing
 
-Responsive layout testing along with page content was thoroughly tested and results where recorded in a spread sheet and saved into a PDF for easier viewing. 
+Responsive layout testing along with page content was thoroughly tested and results were recorded in a spreadsheet and saved into a PDF for easier viewing. 
 
 [test sheet](https://github.com/roomacarthur/pcr/blob/main/documentation/testing_sheet.pdf)
 
@@ -272,7 +272,7 @@ All tests PASSED with some tests done over the phone with relatives. I have also
 
    PASS
 
-2. Test: Check jQuery is attaching placholders for the inputs on New Post page.
+2. Test: Check jQuery is attaching placeholders for the inputs on New Post page.
    - Result: Each field that is using jQuery to attach a placeholder is working correctly.
 
    PASS
@@ -301,9 +301,9 @@ All results from Lighthouse tests where great, with nearly all results finishing
    - FIX: The stock CBV success message doesn't seem to work for DeleteViews. The fix was to get the objects data and then pass that through to format the string with the objects dictionary. Help from a Stack Overflow post. [Credit](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown)
 
 2. Content past through the rich text editor was displaying raw HTML data in the view. 
-   - FIX: Passing the "| safe" tag into the view is allowing for the rich text to bew rendered. 
+   - FIX: Passing the "| safe" tag into the view is allowing for the rich text to be rendered. 
 
-3. Major Databse Conflicts in early Development, preventing from any data to be passed back and forth. 
+3. Major Database Conflicts in early Development, preventing from any data to be passed back and forth. 
    - FIX: running "python manage.py migrate 'app' zero" Deleting all entries into /migrations apart from the __ init __ file and resetting the database in heroku, wiping the Database of all data fixed the issue. 
 
 4. When completing the New Post form, the slug field was not being auto populated. 
