@@ -225,6 +225,14 @@ Below is a list of all the python packages used for PCR and there version types.
 
 ## Tests
 
+### Generic Testing
+
+Responsive layout testing along with page content was thoroughly tested and results where recorded in a spread sheet and saved into a PDF for easier viewing. 
+
+[test sheet](https://github.com/roomacarthur/pcr/blob/main/documentation/testing_sheet.pdf)
+
+All tests PASSED with some tests done over the phone with relatives. I have also had multiple friends test the site and no issues have been raised and all devices used have displayed the app exactly how it should be shown.
+
 ### Python tests:
 
 1. Test: Test the NewPost(CreateView) by creating a new post.
