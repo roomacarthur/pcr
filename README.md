@@ -186,7 +186,7 @@ With the first release of PCR we will not be supporting images, but it is someth
 
 When working on pyhton projects I work within a virtual env and track all my packages in a requirements.txt file. 
 
-Below is a list of all the python packages used for PCR:
+Below is a list of all the python packages used for PCR and there version types.:
 - asgiref==3.5.0
 - bleach==4.1.0
 - certifi==2021.10.8
@@ -196,6 +196,7 @@ Below is a list of all the python packages used for PCR:
 - defusedxml==0.7.1
 - dj-database-url==0.5.0
 - Django==3.2.12
+   - Django 3.2.12 was a specific use as there was security issues with previous 3.2 versions.
 - django-allauth==0.49.0
 - django-ckeditor==6.2.0
 - django-crispy-forms==1.14.0

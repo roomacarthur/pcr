@@ -186,6 +186,12 @@ header a:hover {
   font-size: 18px;
   text-align: center;
 }
+.about{
+  text-align: center;
+}
+.about > p{
+  margin: 10px 0;
+}
 
 /*--------------------- posts styling */
 .all-posts-header {
