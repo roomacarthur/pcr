@@ -97,6 +97,10 @@ For PCR two fonts have been used [Robot](https://fonts.google.com/specimen/Robot
 
 A very basic, yet refreshing colour palette was picked for PCR, the above colours are used frequently throughout the project with a couple other colours being called for better defined :hover objects and Yes/No butons. The colour of #ff0000(Bright RED) was used for the lick button so it would stand out a lot more.
 
+### Visuals
+
+Across the application, box shadows are used to give depth to containers to make them stand out, all links, and interactive actions have a :hover object set in CSS with some transforming to a bigger scale and some changing to a more prominent colour. All clickable objects have cursor set to pointer. 
+
 # Features
 
 ## Existing Features
@@ -208,6 +212,9 @@ All results from Lighthouse tests where great, with nearly all results finishing
 4. When completing the New Post form, the slug field was not being auto populated. 
    - FIX: With help from [Here](https://stackoverflow.com/questions/63053210/changing-id-field-to-slug-field-in-django) A save function was added to the model, to use slugify to post the new slug to the model upon form completion.
 
+5. Rich Text editor not displaying in Post Review Form. 
+   - No Fix was found within the allowed timeframe. 
+
 # Deployment
 
 This project will be deployed to [Heroku](https://heroku.com) using the following outlined steps:
@@ -260,7 +267,8 @@ Success message not working in UpdateView.
 - https://stackoverflow.com/questions/39999956/django-how-to-send-a-success-message-using-a-updateview-cbv
 
 - PostDetail view.
-   help from CI walkthrough project: 
+   help from CI walk through project, I Think Therefore I Blog
+   https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/c6a89f138afe4b209ee4fa6d6f1251a3/ 
 
 Rich Text Field from CKEditor
 - https://ckeditor.com/docs/ckeditor4/latest/index.html

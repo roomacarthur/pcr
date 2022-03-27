@@ -32,7 +32,8 @@ class AllPosts(generic.ListView):
 
 
 # post detail view.
-# with help from  "therefor I blog"
+# Coded with help from Django walk through project "I Think Therefore I Blog"
+# https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/c6a89f138afe4b209ee4fa6d6f1251a3/
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
