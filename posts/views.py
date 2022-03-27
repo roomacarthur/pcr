@@ -15,10 +15,6 @@ def about(request):
     return render(request, 'posts/about.html')
 
 
-def help(request):
-    return render(request, 'posts/help.html')
-
-
 # all posts view, used within all_posts.html
 class AllPosts(generic.ListView):
     """

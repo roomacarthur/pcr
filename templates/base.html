@@ -41,7 +41,6 @@
         <ul>
           <li><a href="{% url 'homepage' %}">Home</a></li>
           <li><a href="{% url 'about-page' %}">About</a></li>
-          <li><a href="{% url 'help-page' %}">Help</a></li>
           <!--Only show if user is authenticated(logged in)-->
           {% if user.is_authenticated %}
           <li><a class="create-btn" href="{% url 'new-post' %}"><i class="fa-solid fa-plus"></i> Create</a></li>
@@ -61,7 +60,6 @@
         <ul class="mobile-nav">
           <li><a href="{% url 'homepage' %}">Home</a></li>
           <li><a href="{% url 'about-page' %}">About</a></li>
-          <li><a href="{% url 'help-page' %}">Help</a></li>
           <!--Only show if user is authenticated(logged in)-->
           {% if user.is_authenticated %}
           <li><a class="create-btn" href="{% url 'new-post' %}"><i class="fa-solid fa-plus"></i></a></li>
@@ -102,7 +100,6 @@
         <ul>
           <li><a href="{% url 'homepage'%}">Home</a></li>
           <li><a href="{% url 'about-page'%}">About</a></li>
-          <li><a href="{% url 'help-page'%}">Help</a></li>
         </ul>
       </div>
       <div class="line-break"></div>

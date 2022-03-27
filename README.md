@@ -21,39 +21,87 @@ With the aim of PCR being to allow people to get a better understanding of their
 
 The main overarching target audience for PCR is that of people who are in Development no matter there level of experience, Ideally the main focus is to aid newcomers and junior developers in creating better projects.
 
-## Strategy
 
 ### User Stories
 
-Below are a list of user stories that are very basic and cover a lot of the user and admin needs for PCR. The following User Stories have been broken down into more detail following an Agile Workflow approach with the aid of GitHub **Projects**. A User Story template was created allowing for me to manage the user stories and add them to a precise workflow.
+Below are a list of user stories that are very basic and cover a lot of the user and admin needs for PCR. The following User Stories have been broken down into more detail following an Agile Workflow approach with the aid of GitHub **Projects**. A User Story template was created allowing for me to manage the user stories and add them to a precise workflow with some automation.
 
 #### As a Site User:
-
-Maybe just link to GitHub Project...
 
 1. I want to be able to understand the functionality of the application so I can decide if what the application offers is something I want.
 2. I want to feel welcomed and find the site easy to navigate and view so that as a junior developer I don't feel out of depth.
 3. I want to be able to sign up so that I can have my own profile and submit work for review and review other site users work.
 4. I want to be able to post a project for review so that I can get a better understanding of my application.
 5. I want to be able to easily submit a project for review so that I can do it quickly and efficiently.
+6. I want to be able to like and unlike content.
 
 #### As a Reviewer:
 
-1.
-2.
-3.
+1. I want to be able to post a review on someones post.
+2. I want to be able to edit my post after I have created it.
+3. I want to be able to delete my post incase I'm no longer happy with it.
 
 #### As a site admin:
 
-1.
-2.
-3.
+1. I wan't to be able to edit user posted content from within the app. 
+2. I wan't to be able to delete user posted content from within the app
+3. I wan't to be able to navigate the Admin Panel with ease. 
 
-will include user stories here.
+## Strategy
+
+Create an interactive and responsive app that allows for flawless utilisation for CRUD(Create, Read, Update & Delete) functionality. Users will be able to view content, but to interact fully they will need to sign up and be logged in. Code will be written in a way that allows for easy readability and future updates.
+
+### Project Goals
+ - Provide clear and simple data for users.
+ - Constantly upgrade and progress the functionality of the app.
+ - Allow for users to register
+ - Allow for users to create, read, update & delete content. 
 
 ## Scope
 
+As it stands PCR has an almost never ending scope and with this I predict there will be multiple iterations. For our intial release we will be focusing on getting an MVP(minimum viable product) to market, once the App is functioning we can start working on separate branches whilst not effecting the current live iteration. 
+
+The first release(MVP) of PCR will be defined by the following features:
+
+   - User authentication (sign up, log in, sign out)
+   - Create Posts - Update & Delete
+   - Create Reviews - Update & Delete
+   - Bland yet effective styling.
+   - All Links functional
+   - CRUD functionality available on all content.
+   - Ability to post code snippits.
+
+Future releases of PCR may include the following:
+
+   - Custom user model for profile customization. 
+   - Search bar for users to search through content.
+   - Review up/down vote system
+   - User score, (posts+reviews+likes)
+
 ## Structure
+
+The structure of the application focuses mainly on the content that will be displayed, simple yet clean and clear. A very minimalistic design will be implimented on all pages, base.html will carry 90% on the page styling with the individual view templates just referring to a content section on the page. 
+
+- Header
+
+   - Logo (links back to homapage)
+   - Desktop navigation
+   - Mobile navigation for smaller devices. 
+
+- Messages
+
+   - Display success messages
+   - display content to user upon actions.
+
+- Main
+
+   - This is the block content so all other pages will be styled inside here.
+
+- Footer
+
+   - Links to socials
+   - small site navigation. 
+
 
 ## Skeleton
 
@@ -100,12 +148,28 @@ A very basic, yet refreshing colour palette was picked for PCR, the above colour
 ### Visuals
 
 Across the application, box shadows are used to give depth to containers to make them stand out, all links, and interactive actions have a :hover object set in CSS with some transforming to a bigger scale and some changing to a more prominent colour. All clickable objects have cursor set to pointer. 
+### Images
+
+With the first release of PCR we will not be supporting images, but it is something we will be looking into in the future, as it stands our only image is our Favicon which is loaded via our static files. 
 
 # Features
 
 ## Existing Features
+   
+   - User authentication (sign up, log in, sign out)
+   - Create Posts - Update & Delete
+   - Create Reviews - Update & Delete
+   - Bland yet effective styling.
+   - All Links functional
+   - CRUD functionality available on all content.
+   - Ability to post code snippits.
 
 ## Future Features
+
+   - Custom user model for profile customization. 
+   - Search bar for users to search through content.
+   - Review up/down vote system
+   - User score, (posts+reviews+likes)
 
 # Technologies
 
@@ -118,21 +182,45 @@ Across the application, box shadows are used to give depth to containers to make
 - Python
 - JavaScript
 - jQuery
-
-- Django
-- Django-allauth
-- Gunicorn
-- Psycopg2
-- dj_database_url
-
 - Heroku
 
+When working on pyhton projects I work within a virtual env and track all my packages in a requirements.txt file. 
+
+Below is a list of all the python packages used for PCR:
+- asgiref==3.5.0
+- bleach==4.1.0
+- certifi==2021.10.8
+- cffi==1.15.0
+- charset-normalizer==2.0.12
+- cryptography==36.0.1
+- defusedxml==0.7.1
+- dj-database-url==0.5.0
+- Django==3.2.12
+- django-allauth==0.49.0
+- django-ckeditor==6.2.0
+- django-crispy-forms==1.14.0
+- django-js-asset==2.0.0
+- gunicorn==20.1.0
+- idna==3.3
+- oauthlib==3.2.0
+- packaging==21.3
+- psycopg2==2.9.3
+- pycparser==2.21
+- PyJWT==2.3.0
+- pyparsing==3.0.7
+- python3-openid==3.2.0
+- pytz==2021.3
+- requests==2.27.1
+- requests-oauthlib==1.3.1
+- six==1.16.0
+- sqlparse==0.4.2
+- tzdata==2021.5
+- urllib3==1.26.8
+- webencodings==0.5.1
+- whitenoise==6.0.0
+
+
 # Testing
-
-
-
-
-
 
 ## Tests
 
@@ -272,3 +360,5 @@ Success message not working in UpdateView.
 
 Rich Text Field from CKEditor
 - https://ckeditor.com/docs/ckeditor4/latest/index.html
+
+- Code Institute - Support
