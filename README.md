@@ -370,4 +370,5 @@ Success message not working in UpdateView.
 Rich Text Field from CKEditor
 - https://ckeditor.com/docs/ckeditor4/latest/index.html
 
-- Code Institute - Support
+Code Institute - Tutor Assistance 
+   - Helping with debugging
