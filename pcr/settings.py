@@ -14,27 +14,32 @@ from pathlib import Path
 import os
 import dj_database_url
 
+
 # handle env.py during development.
 if os.path.isfile('env.py'):
     import env
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
 
 ALLOWED_HOSTS = ['pcr-roo.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     # Django installed apps
     'django.contrib.admin',
@@ -55,6 +60,7 @@ INSTALLED_APPS = [
     'ckeditor',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -68,6 +74,7 @@ MIDDLEWARE = [
 
 
 ROOT_URLCONF = 'pcr.urls'
+
 
 TEMPLATES = [
     {
@@ -85,8 +92,8 @@ TEMPLATES = [
     },
 ]
 
-# AllAuth settings. 
 
+# AllAuth settings. 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
@@ -96,8 +103,10 @@ AUTHENTICATION_BACKENDS = (
 )
 SITE_ID = 1
 
+
 # Print email confirmation into the console to ensure that the email verification and user registration is working properly. 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 # Ensure that an email is used.
 ACCOUNT_EMAIL_REQUIRED = True
@@ -160,9 +169,6 @@ USE_TZ = True
 # All static files are handled with whitenoise.
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Custom configs for CKeditor, control the style and look of the Rich Text Editor. 
